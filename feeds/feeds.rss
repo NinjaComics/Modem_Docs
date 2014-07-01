@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>/radio/bin/io</title><link>http://ninjacomics.github.io/radioblogr/</link><description></description><atom:link href="http://ninjacomics.github.io/radioblogr/feeds/feeds.rss" rel="self"></atom:link><lastBuildDate>Tue, 01 Jul 2014 11:34:00 +0530</lastBuildDate><item><title>Test Post - Part 1</title><link>http://ninjacomics.github.io/radioblogr/Testpost.html</link><description>&lt;p&gt;Well this is my first post.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>/radio/bin/io</title><link>http://ninjacomics.github.io/radioblogr/</link><description></description><atom:link href="http://ninjacomics.github.io/radioblogr/feeds/feeds.rss" rel="self"></atom:link><lastBuildDate>Tue, 01 Jul 2014 11:34:00 +0530</lastBuildDate><item><title>Test Post - Part 1</title><link>http://ninjacomics.github.io/radioblogr/2014/07/Testpost.html</link><description>&lt;p&gt;Well this is my first post.&lt;/p&gt;
 &lt;div class="system-message"&gt;
 &lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;/home/ravi/Extras/radioblogr/content/2014/07/testpost.rst&lt;/tt&gt;, line 12)&lt;/p&gt;
-&lt;p&gt;Error in &amp;quot;code&amp;quot; directive:
-maximum 1 argument(s) allowed, 3 supplied.&lt;/p&gt;
+&lt;p&gt;Content block expected for the &amp;quot;code-block&amp;quot; directive; none found.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-.. code:: bash
+.. code-block :: bash
     export PATH=$PATH
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ravi Sharan</dc:creator><pubDate>Tue, 01 Jul 2014 11:34:00 +0530</pubDate><guid>tag:ninjacomics.github.io/radioblogr,2014-07-01:Testpost.html</guid><category>Testpost</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ravi Sharan</dc:creator><pubDate>Tue, 01 Jul 2014 11:34:00 +0530</pubDate><guid>tag:ninjacomics.github.io/radioblogr,2014-07-01:2014/07/Testpost.html</guid><category>Testpost</category></item></channel></rss>
