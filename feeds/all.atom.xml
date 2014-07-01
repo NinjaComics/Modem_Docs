@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>/radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://ninjacomics.github.io/radioblogr/feeds/all.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2014-07-01T11:34:00+05:30</updated><entry><title>Test Post - Part 1</title><link href="http://ninjacomics.github.io/radioblogr/2014/07/Testpost.html" rel="alternate"></link><updated>2014-07-01T11:34:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2014-07-01:2014/07/Testpost.html</id><summary type="html">&lt;p&gt;Well this is my first post.&lt;/p&gt;
-&lt;div class="system-message"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;/home/ravi/Extras/radioblogr/content/2014/07/testpost.rst&lt;/tt&gt;, line 12)&lt;/p&gt;
-&lt;p&gt;Content block expected for the &amp;quot;code-block&amp;quot; directive; none found.&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-.. code-block :: bash
-    export PATH=$PATH
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;VIRTUALENVWRAPPER_PYTHON&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/python2
+&lt;/pre&gt;&lt;/div&gt;
 </summary><category term="Testpost"></category></entry></feed>
