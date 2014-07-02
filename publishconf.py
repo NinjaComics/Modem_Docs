@@ -13,8 +13,8 @@ from pelicanconf import *
 SITEURL = 'http://ninjacomics.github.io/radioblogr'
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+FEED_ALL_ATOM = 'radioblogrfeeds/main.xml'
+#CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 
