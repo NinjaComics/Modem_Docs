@@ -12,6 +12,7 @@ Colors :
 @import url("fonts.css");
 @import url("tinytypo.css");
 @import url("pygment.css");
+@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700);
 
 
 /* Layout */
@@ -135,6 +136,7 @@ header .pages a {
 /* Titles */
 
 h1 a {
+  font-family: 'Cabin Sketch', cursive;	
   color: inherit;
   border-bottom: none;
 }
@@ -143,7 +145,7 @@ h1 a {
 /* Texts */
 
 p {
-  text-align: justify;
+  text-align: right;
 }
 
 a {
@@ -213,7 +215,8 @@ article.summary .metadata {
 
 .metadata p,
 .metadata address {
-  text-align: left;
+	margin: 0
+	text-align: left;
 }
 
 /* Listings */
