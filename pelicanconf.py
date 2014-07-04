@@ -22,7 +22,7 @@ ARTICLE_SAVE_AS ='{date:%Y}/{date:%m}/{slug}.html'
 
 # Feed generation is usually not desired when developing
 FEED_DOMAIN = 'http://feeds.feedburner.com'
-#FEED_ATOM = 'radioblogrfeeds/main.xml'
+FEED_ALL_ATOM = 'radioblogrfeeds/main.xml'
 #FEED_RSS = 'feeds/feeds.rss'
 #CATEGORY_FEED_ATOM = None
 #TRANSLATION_FEED_ATOM = None

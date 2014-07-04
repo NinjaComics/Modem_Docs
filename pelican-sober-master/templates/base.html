@@ -32,10 +32,17 @@
 	  <header role="banner">
 	    <div class="feeds">
 	      {% if FEED_ALL_ATOM %}
-	        <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate"><img src="{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" alt="atom feed"/></a>
+	      <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" 
+		      rel="alternate"><img 
+		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" 
+		      alt="atom feed"/>
+	      </a>
 	      {% endif %}
           {% if FEED_ALL_RSS %}
-            <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate"><img src="/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" alt="rss feed"/></a>
+            <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" 
+		    rel="alternate"><img 
+		    src="/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" 
+		    alt="rss feed"/></a>
           {% endif %}
 	    </div>
 	    {% if PAGES %}
@@ -56,7 +63,8 @@
 		  </div>	
 		  
 		  <div class="sidebar">
-		    <div class="sidebar-container" {% if PELICAN_SOBER_STICKY_SIDEBAR %}id="sidebar-container-fixed"{% endif %}>
+		    <div class="sidebar-container" {% if PELICAN_SOBER_STICKY_SIDEBAR %}
+			    id="sidebar-container-fixed"{% endif %}>
 
 	          {% if PELICAN_SOBER_ABOUT %}
 	            <aside>
@@ -107,10 +115,10 @@
 		  {{ AUTHOR }} - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
     	</p>
 
-	  </footer>	
+	  </footer>
 
 	</div>
-	
+
 	{% if GOOGLE_ANALYTICS %}
 	  <script>
 		var _gaq=[['_setAccount','{{ GOOGLE_ANALYTICS }}'],['_trackPageview']];

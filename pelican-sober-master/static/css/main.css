@@ -32,6 +32,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -196,27 +197,24 @@ article.summary > div {
 
 article.full .metadata,
 article.summary .metadata {
-  padding: 1%;  
   font-style: italic;
-  text-align: right;
+  text-align: left;
 }
 
 article.full .metadata {
   width: 25%;
-  float: right;
-  margin: 0 0 2% 1%;
+  float: left;
 }
 
 article.summary .metadata {
   width: 23%;
   float: left;
-  margin: 0 1% 2% 0 ;
 }
 
 .metadata p,
 .metadata address {
-  margin: 0;
-  text-align: right;
+	margin: 0
+	text-align: left;
 }
 
 /* Listings */
