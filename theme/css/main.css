@@ -55,6 +55,7 @@ header {
 }
 
 .wrapper {
+  font-family: 'Cabin Sketch', cursive';	
   display: table;
   width: 100%;
 }
