@@ -201,6 +201,11 @@ article.summary .metadata {
   text-align: left;
 }
 
+article.metadata
+{
+  font-style: italic;
+  text-align:left;
+}
 article.full {
   width: 25%;
   float: left;
