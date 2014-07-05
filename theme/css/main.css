@@ -97,7 +97,7 @@ header .feeds {
 
 header .feeds a {
   display: block;
-  float: left;
+  float: inherit;
   padding-right: 5px;
   padding-left: 5px;
   width: 48px;
