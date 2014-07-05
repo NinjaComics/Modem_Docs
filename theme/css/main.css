@@ -109,7 +109,6 @@ header .feeds a:active {
 }
 
 header .pages {
-  font-family: 'Open Sans', sans-serif;	
   float: right;
   padding-right: 20px;
 }
@@ -138,7 +137,6 @@ header .pages a {
 /* Titles */
 
 h1 a {
-  font-family: 'Open Sans', sans-serif;
   color: inherit;
   border-bottom: none;
 }
