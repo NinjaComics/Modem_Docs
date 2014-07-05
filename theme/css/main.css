@@ -98,8 +98,8 @@ header .feeds {
 header .feeds a {
   display: block;
   float: right;
-  margin-right: 10px;
-  width: 48px;
+  padding: 2px 15px 2px 15px;
+  width: 40px;
 }
 
 header .feeds a:hover,
