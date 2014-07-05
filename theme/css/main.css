@@ -100,7 +100,7 @@ header .feeds a {
   float: right;
   padding-right: 5px;
   padding-left: 5px;
-  width: 47px;
+  width: 48px;
 }
 
 header .feeds a:hover,
@@ -213,7 +213,6 @@ article.summary .metadata {
 
 .metadata p,
 .metadata address {
-	margin: 0
 	text-align: left;
 }
 
