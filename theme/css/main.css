@@ -98,8 +98,8 @@ header .feeds {
 header .feeds a {
   display: block;
   float: left;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 8px;
+  padding-left: 8px;
   width: 48px;
 }
 
