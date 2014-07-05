@@ -197,23 +197,26 @@ article.summary > div {
 
 article.full .metadata, 
 article.summary .metadata {
+  padding: 1%
   font-style: italic;
-  text-align: left;
+  text-align: right;
 }
 
-article.full {
+article.full .metadata {
   width: 25%;
-  float: left;
+  float: right;
+  margin: 0 0 2% 1% ;
 }
 
 article.summary .metadata {
   width: 23%;
   float: left;
+  margin: 0 1% 2% 0 ;
 }
 
 .metadata p,
 .metadata address {
-	text-align: left;
+	text-align: right;
 }
 
 /* Listings */
