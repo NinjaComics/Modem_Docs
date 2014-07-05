@@ -30,6 +30,11 @@ FEED_ALL_ATOM = 'radioblogrfeeds/main.xml'
 # Blogroll
 LINKS =  (('DDG', 'http://www.duckduckgo.com'),)
 
+#Github, Googleplus, Mail
+GITHUB = 'https://github.com/NinjaComics'
+GPLUS = 'https://plus.google.com/u/0/+RaviSharan/'
+MAIL = 'mailto:bhagavathula.ravisharan@gmail.com'
+
 # Social widget
-SOCIAL = (('Github', 'https://github.com/NinjaComics'),)
+#SOCIAL = (('Github', 'https://github.com/NinjaComics'),)
 

@@ -24,24 +24,49 @@
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %}
 </head>
-	
+
 <body>
 {{ FEED_ATOM }}
     <div class="container">
-	  
+
 	  <header role="banner">
 	    <div class="feeds">
 	      {% if FEED_ALL_ATOM %}
-	      <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" 
-		      rel="alternate"><img 
-		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" 
+	      <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}"
+		      rel="alternate"><img
+		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/rss_b.png" 
 		      alt="atom feed"/>
 	      </a>
 	      {% endif %}
+
+	      {% if GITHUB %}
+	      <a href="{{ GITHUB }}"
+		      rel="alternate"><img
+		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/github_b.png"
+		      alt ="github"/>
+	      </a>
+	      {% endif %}
+
+	      {% if GPLUS %}
+	      <a href="{{ GPLUS }}"
+		      rel="alternate"><img
+		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/gplus_b.png"
+		      alt="gplus"/>
+	      </a>
+	      {% endif %}
+
+	      {% if MAIL %}
+	      <a href="{{ MAIL }}"
+		      rel ="alternate"><img
+		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/mail_b.png"
+		      alt="mail"/>
+	      </a>
+	      {% endif %}
+
           {% if FEED_ALL_RSS %}
-            <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" 
-		    rel="alternate"><img 
-		    src="/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" 
+            <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}"
+		    rel="alternate"><img
+		    src="/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png"
 		    alt="rss feed"/></a>
           {% endif %}
 	    </div>
@@ -55,13 +80,13 @@
 	    {% endif %}
 		<a href="{{ SITEURL }}" class="title">{{ SITENAME }}</a>
       </header>
-	
+
 	  <div class="wrapper">
 
 		  <div role="main" class="content">
 		    {% block content %}{% endblock %}
-		  </div>	
-		  
+		  </div>
+
 		  <div class="sidebar">
 		    <div class="sidebar-container" {% if PELICAN_SOBER_STICKY_SIDEBAR %}
 			    id="sidebar-container-fixed"{% endif %}>
@@ -76,7 +101,7 @@
 			  {% endif %}
 
   	          <nav>
-	            <h2>Categories</h2>
+	            <h3>Categories</h3>
 	            <ul>
 	              {% for cat, null in categories %}
 	                <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
@@ -86,7 +111,7 @@
 
 	          {% if SOCIAL %}
 	            <aside>
-	            <h2>Social</h2>
+	            <h3>Social</h3>
 			      <ul class="social">
 				    {% for name, link in SOCIAL %}
 				    <li><a href="{{ link }}">{{ name }}</a><i></i></li>
@@ -97,7 +122,7 @@
 
 	          {% if LINKS %}
 	            <aside>
-	              <h2>Blogroll</h2>
+	              <h3>Blogroll</h3>
 	              <ul>
 	                {% for name, link in LINKS %}
 	                  <li><a href="{{ link }}">{{ name }}</a></li>
@@ -112,9 +137,9 @@
 
       <footer>
 		<p role="contentinfo">
-		  {{ AUTHOR }} - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
+		Content licensed under the Creative Commons Attribution-ShareAlike 4.0 International Public License.
+		Theme: <a href="http://www.duckduckgo.com">Modified-Pelican-Sober</a>
     	</p>
-
 	  </footer>
 
 	</div>
