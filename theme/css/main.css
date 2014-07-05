@@ -55,6 +55,7 @@ header {
 }
 
 .wrapper {
+  font-family: 'Open Sans', sans-serif;	
   display: table;
   width: 100%;
 }
