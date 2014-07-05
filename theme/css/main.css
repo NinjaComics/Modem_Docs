@@ -89,15 +89,15 @@ header a.title {
 }
 
 header .feeds {
-  float: right;
-  text-align: right;
+  float: left;
+  text-align: left;
   width: 25%;
   line-height: 40px;
 }
 
 header .feeds a {
   display: block;
-  float: right;
+  float: left;
   padding-right: 5px;
   padding-left: 5px;
   width: 48px;
