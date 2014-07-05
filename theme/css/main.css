@@ -1,11 +1,4 @@
 /*
- *
- *
- *
- *
- *
- *
- *
 Colors :
 - #40403F
 - #4D4D4C
@@ -104,7 +97,7 @@ header .feeds {
 
 header .feeds a {
   display: block;
-  float: right;
+  float: center;
   padding-right: 5px;
   width: 40px;
 }
