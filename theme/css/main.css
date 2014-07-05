@@ -98,8 +98,8 @@ header .feeds {
 header .feeds a {
   display: block;
   float: left;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-right: 5px;
+  padding-left: 5px;
   width: 48px;
 }
 
@@ -137,7 +137,6 @@ header .pages a {
 /* Titles */
 
 h1 a {
-  font-family: 'Cabin Sketch', cursive;	
   color: inherit;
   border-bottom: none;
 }
