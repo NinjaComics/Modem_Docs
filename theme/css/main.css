@@ -89,8 +89,8 @@ header a.title {
 }
 
 header .feeds {
-  float: left;
-  text-align: left;
+  float: right;
+  text-align: right;
   width: 25%;
   line-height: 40px;
 }
