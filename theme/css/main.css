@@ -195,17 +195,12 @@ article.summary > div {
   margin-left: 28%;
 }
 
-article.full, 
+article.full , 
 article.summary .metadata {
   font-style: italic;
-  text-align: left;
+  text-align: justify;
 }
 
-article.metadata
-{
-  font-style: italic;
-  text-align:left;
-}
 article.full {
   width: 25%;
   float: left;
