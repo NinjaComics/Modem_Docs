@@ -210,7 +210,8 @@ article.full .metadata {
 
 article.summary .metadata {
   width: 23%;
-  float: left;
+  float: right;
+  margin: 0 1% 2% 0;
 }
 
 .metadata p,
