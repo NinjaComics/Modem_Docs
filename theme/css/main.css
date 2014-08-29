@@ -196,9 +196,9 @@ article.summary > div {
 
 article.full .metadata,
 article.summary .metadata {
-  padding: 1%;  
+  padding: 5%;  
   font-style: italic;
-  text-align: right;
+  text-align: left;
 }
 
 article.full .metadata {
@@ -210,12 +210,12 @@ article.full .metadata {
 article.summary .metadata {
   width: 23%;
   float: left;
-  margin: 0 1% 2% 0 ;
+  margin: 2% 1% 2% 1% ;
 }
 
 .metadata p,
 .metadata address {
-  margin: 0;
+  margin: 1;
   text-align: left;
 }
 
