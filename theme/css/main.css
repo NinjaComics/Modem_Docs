@@ -186,7 +186,7 @@ hr {
 /* Article */
 
 article.summary {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   clear: both;
 }
 
@@ -216,7 +216,7 @@ article.summary .metadata {
 .metadata p,
 .metadata address {
   margin: 0;
-  text-align: right;
+  text-align: left;
 }
 
 /* Listings */
