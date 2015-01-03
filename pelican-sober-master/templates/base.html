@@ -17,57 +17,25 @@
 	{% block scripts %}
 	{% endblock %}
 
-    {% if FEED_ATOM %}
-    <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
     {% endif %}
     {% if FEED_ALL_RSS %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
     {% endif %}
 </head>
-
+	
 <body>
 {{ FEED_ATOM }}
     <div class="container">
-
+	  
 	  <header role="banner">
 	    <div class="feeds">
 	      {% if FEED_ALL_ATOM %}
-	      <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}"
-		      rel="alternate"><img
-		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/rss_b.png" 
-		      alt="atom feed"/>
-	      </a>
+	      <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" alt="atom feed"/></a>
 	      {% endif %}
-
-	      {% if GITHUB %}
-	      <a href="{{ GITHUB }}"
-		      rel="alternate"><img
-		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/github_b.png"
-		      alt ="github"/>
-	      </a>
-	      {% endif %}
-
-	      {% if GPLUS %}
-	      <a href="{{ GPLUS }}"
-		      rel="alternate"><img
-		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/gplus_b.png"
-		      alt="gplus"/>
-	      </a>
-	      {% endif %}
-
-	      {% if MAIL %}
-	      <a href="{{ MAIL }}"
-		      rel ="alternate"><img
-		      src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/mail_b.png"
-		      alt="mail"/>
-	      </a>
-	      {% endif %}
-
           {% if FEED_ALL_RSS %}
-            <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}"
-		    rel="alternate"><img
-		    src="/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png"
-		    alt="rss feed"/></a>
+	  <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/icons/feed-32px.png" alt="rss feed"/></a>
           {% endif %}
 	    </div>
 	    {% if PAGES %}
@@ -80,16 +48,15 @@
 	    {% endif %}
 		<a href="{{ SITEURL }}" class="title">{{ SITENAME }}</a>
       </header>
-
+	
 	  <div class="wrapper">
 
 		  <div role="main" class="content">
 		    {% block content %}{% endblock %}
-		  </div>
-
+		  </div>	
+		  
 		  <div class="sidebar">
-		    <div class="sidebar-container" {% if PELICAN_SOBER_STICKY_SIDEBAR %}
-			    id="sidebar-container-fixed"{% endif %}>
+		    <div class="sidebar-container" {% if PELICAN_SOBER_STICKY_SIDEBAR %}id="sidebar-container-fixed"{% endif %}>
 
 	          {% if PELICAN_SOBER_ABOUT %}
 	            <aside>
@@ -111,7 +78,7 @@
 
 	          {% if SOCIAL %}
 	            <aside>
-	            <h3>Social</h3>
+	            <h2>Social</h2>
 			      <ul class="social">
 				    {% for name, link in SOCIAL %}
 				    <li><a href="{{ link }}">{{ name }}</a><i></i></li>
@@ -122,7 +89,7 @@
 
 	          {% if LINKS %}
 	            <aside>
-	              <h3>Blogroll</h3>
+	              <h2>Blogroll</h2>
 	              <ul>
 	                {% for name, link in LINKS %}
 	                  <li><a href="{{ link }}">{{ name }}</a></li>
@@ -137,13 +104,13 @@
 
       <footer>
 		<p role="contentinfo">
-		Content licensed under the Creative Commons Attribution-ShareAlike 4.0 International Public License.
-		Theme: <a href="http://www.duckduckgo.com">Modified-Pelican-Sober</a>
+		  {{ AUTHOR }} - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
     	</p>
-	  </footer>
+
+	  </footer>	
 
 	</div>
-
+	
 	{% if GOOGLE_ANALYTICS %}
 	  <script>
 		var _gaq=[['_setAccount','{{ GOOGLE_ANALYTICS }}'],['_trackPageview']];

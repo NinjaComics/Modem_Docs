@@ -14,7 +14,7 @@ SITEURL = 'http://ninjacomics.github.io/radioblogr'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'radioblogrfeeds/main.xml'
-#CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 

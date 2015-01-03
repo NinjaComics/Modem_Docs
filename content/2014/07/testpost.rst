@@ -1,14 +1,11 @@
-Test Post - Part 1 
+Testpost
 ###############################
 
 :date: 2014-07-01 11:34
-:tags: Testpost 
-:category: radio
+:tags: Testpost
+:category: /io
 :author: Ravi Sharan
-:slug: Testpost 
+:slug: Testpost
 
-Well this is my first post.
+This testpost marks the start of this blog.
 
-.. code-block:: python 
-
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
