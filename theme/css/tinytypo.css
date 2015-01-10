@@ -702,7 +702,6 @@ a:focus {
 }
 a:hover {
   outline: 0;
-  cursor: pointer;
 }
 a:active {
   outline: 0;

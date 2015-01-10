@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2014-07-01T11:34:00+05:30</updated><entry><title>Test Post - Part 1</title><link href="http://ninjacomics.github.io/radioblogr/2014/07/Testpost.html" rel="alternate"></link><updated>2014-07-01T11:34:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2014-07-01:radioblogr/2014/07/Testpost.html</id><summary type="html">&lt;p&gt;Well this is my first post.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;VIRTUALENVWRAPPER_PYTHON&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;python2&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2014-09-02T18:09:00+05:30</updated><entry><title>Start the stack with right 3GPP specifications</title><link href="http://ninjacomics.github.io/radioblogr/2014/09/Start%20the%20stack%20with%20right%203GPP%20specifications.html" rel="alternate"></link><updated>2014-09-02T18:09:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2014-09-02:2014/09/Start the stack with right 3GPP specifications.html</id><summary type="html">&lt;p&gt;Well, this is my first official post after starting this blog and after the
+rather null &lt;a class="reference external" href="http://ninjacomics.github.io/radioblogr/2014/07/Testpost.html"&gt;Testpost&lt;/a&gt;. So here are few tips on starting to get to the right
+3GPP specifications, irrespective of what standard you want to work on. When I
+initially started reading the 3GPP specifications an year ago, I was not sure,
+if the one I chose would provide me with the information I needed. Also, I was
+really irritated by the fact that each and every line in any specification
+pointed to several other specifications (and those pointed to several others.
+Gosh ! I felt trapped in a loop of specs), but that's how specifications are
+written and we have to deal with them.&lt;/p&gt;
+&lt;p&gt;So after going through lot of references provided in articles relevant to my
+problem, I ended up choosing the correct set of specs. That's one way of
+starting with the hunt for right set of specifications for your requirement.
+And this is pretty much how anyone who is interested in continuing their
+career in research will follow (atleast that's what I assume).
+Once you zero in on which specs to follow, the right place to hit is the
+&lt;a class="reference external" href="http://www.3gpp.org/specifications/specification-numbering"&gt;3GPP Specification matrix&lt;/a&gt;. This matrix has all the specs sorted according
+to their releases and refers to the respective standards(GSM, 3G, and 4G) with
+respective specification series. Each sepecification series addresses different
+areas of the stack and you can pick the newest and appropriate documents
+suitable for your need.&lt;/p&gt;
+&lt;p&gt;While one can plunge into 3GPP Specification matrix directly, it is always a
+good practice to spend some time referring the relevant articles/papers and
+then come back to the matrix.&lt;/p&gt;
+&lt;p&gt;And coming to the heavy reference of specifications inside another
+specification, you'll tend to ignore them once you get yourself more involved
+into the specifications and hit the right ones automatically once you
+understand them, which leaves me conveying the fact that, there is really no
+workaround or special way to understand 3GPP specifications (fooling around
+everyone who read this blog post for tips).&lt;/p&gt;
+</summary><category term="3GPP Specs"></category></entry><entry><title>Testpost</title><link href="http://ninjacomics.github.io/radioblogr/2014/07/Testpost.html" rel="alternate"></link><updated>2014-07-01T11:34:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2014-07-01:2014/07/Testpost.html</id><summary type="html">&lt;p&gt;This testpost marks the start of this blog.&lt;/p&gt;
 </summary><category term="Testpost"></category></entry></feed>
