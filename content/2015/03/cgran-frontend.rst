@@ -48,7 +48,7 @@ a list of OOT modules available as PyBOMBS recipes and display them on CGRAN.
 
 What does this mean ? 
 
-* The OOT Module developer just has to write a PyBOMBS recipe,
+* The OOT Module developer has to write a PyBOMBS recipe,
 * Pull a request for the recipe to be accpeted into PyBOMBS repo, 
 * Fill in the details in the Manifest file created by gr-modtool, in the module
   repo,
@@ -93,7 +93,10 @@ What Next ?
 ===========
 While we have come far from a trac based site to an automated site for CGRAN,
 more features (like repo stats, to name one) are to be implemented up the sleeve
-without posing any overhead to the OOT Module authors.  
+without posing any overhead to the OOT Module authors. 
+
+*P.S The current state of CGRAN could not have been achieved, if not for constant
+inputs from Nathan West and other PyBOMBS Task Froce members :)*
 
 .. _old CGRAN site: https://web.archive.org/web/20140829151613/https://www.cgran.org/wiki/Projects
 .. _pelican: http://blog.getpelican.com/
