@@ -36,6 +36,97 @@
 <article class="summary">
   <div>
     <h2>
+      <a href="http://ninjacomics.github.io/radioblogr/2015/03/gr-cgran.html" rel="bookmark" title="Permalink to CGRAN - A new look">CGRAN - A new look</a>
+    </h2>
+    <p><p>Recently I have been working on giving Comprehensive GNU Radio Archive Network
+(CGRAN) a new look. While the <a class="reference external" href="https://web.archive.org/web/20140829151613/https://www.cgran.org/wiki/Projects">old CGRAN site</a> was built using trac wiki pages,
+the new one looks more like a standard website, with nitty-gritty details like
+gnuradio version dependencies, tags associated with each OOT Module, more info
+about OOT module developers, etc., all packed in one place. The site's built
+using <a class="reference external" href="http://blog.getpelican.com/">pelican</a> static site generator (Hey ! I use pelican for building this blog
+as well :D) and uses bootstrap-material-design framework by Fez Vrasta, to style
+the site. Design is not just the only attraction to this site - the module page
+information is automated and most important of all, the site's tightly copuled
+with <a class="reference external" href="http://gnuradio.org/redmine/projects/pybombs/wiki">PyBOMBS</a>. Read along to know more !</p>
+<div class="section" id="design-idea">
+<h2>Design Idea</h2>
+<p>First off, the site's built with bits and pieces collected from different sources:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/FezVrasta/bootstrap-material-design">Bootstrap Material Design framework</a> by Fez Vrasta(with some customization)
+to style the site.</li>
+<li><a class="reference external" href="http://bootstrap-table.wenzhixin.net.cn/">Bootstrap tables plugin</a> by Wenzhixin, to make life with tables easy(OOT Module
+List).</li>
+<li><a class="reference external" href="https://github.com/joachimneu/pelican-md-metayaml">Pelican-md-metayaml</a> plugin to read the YAML metadata and generate Module
+pages.</li>
+</ul>
+<p>Also, while designing the site, I took a bit of linience in borrowing ideas from
+two similar websites - <a class="reference external" href="https://atom.io/">atom.io</a> and <a class="reference external" href="http://customelements.io/">customelements.io</a>. The front-page looks
+similar to the <a class="reference external" href="http://customelements.io/">customelements.io</a> with more emphasis on the list of OOT Modules.
+Unlike <a class="reference external" href="http://customelements.io/">customelements.io</a>, which is a standalone site for collection of various
+polymer elemets, CGRAN is a part of the GNU Radio family and it was enough that
+we display the condensed top-matter, as all the extra information concerning OOT
+Modules is available on GNU Radio wiki. That said, there are relevant links on
+the site to connect to the right wiki page :)</p>
+</div>
+<div class="section" id="rule-zero-pybombs-and-cgran">
+<h2>Rule Zero : PyBOMBS and CGRAN</h2>
+<p>Intelligent CGRAN and integrating it with PyBOMBS has been the top priority ever
+since PyBOMBS task force came into picture. The idea is to automatically generate
+a list of OOT modules available as PyBOMBS recipes and display them on CGRAN.</p>
+<p>What does this mean ?</p>
+<ul class="simple">
+<li>The OOT Module developer has to write a PyBOMBS recipe,</li>
+<li>Pull a request for the recipe to be accpeted into PyBOMBS repo,</li>
+<li>Fill in the details in the Manifest file created by gr-modtool, in the module
+repo,</li>
+<li>Sit back while the CGRAN site collects information about the new module and
+generate a new page for it.</li>
+</ul>
+<p>Simple isn't it ?</p>
+</div>
+<div class="section" id="module-pages-and-manifest">
+<h2>Module Pages and Manifest</h2>
+<p>I always liked the <a class="reference external" href="https://atom.io/">atom.io</a>'s way of displaying a detailed information on its
+package/theme on a separate page(that way, the user can stay in a place and get
+more info about a project). I created the OOT Module pages in a similar fashion,
+but <a class="reference external" href="https://atom.io/">atom.io</a> uses the package/theme's README to display information on it's project
+info page. This doesn't fit the CGRAN model, as few already existing OOT Modules
+have license embedded into their README file. Not only does the user have to
+scroll down to get past the license information, it looks a bit odd on the
+individual pages. So what did we do ?
+Enter <a class="reference external" href="https://github.com/n-west/manifests">Manifest.yaml</a> (the format's subject to change) !!! The Manifest.yaml
+provides few mandatory fields to fill in, along with a description field, where
+the OOT Module author can write any information regarding the module, which
+he/she thinks will be of best interest to the user.</p>
+<p>Now, why is YAML the preferred file format ?</p>
+<ul class="simple">
+<li>It is human readable</li>
+<li>Easily readable on github (Assuming the OOT Modules reside on github)</li>
+<li>CGRAN can scrape the necessary information to generate info for Module pages
+in markdown format (remember intelligent CGRAN ?)</li>
+</ul>
+</div>
+<div class="section" id="let-s-talk-logo">
+<h2>Let's talk Logo</h2>
+<p>Finally, let's talk a bit about the logo. The new CGRAN logo is designed to
+resemble an ecosystem of OOT Modules built around GNU Radio. <strong>Self-interest-alert-</strong>
+I am a Dragon Ball fan. That's why there are exactly seven circles,(including
+the GNU Radio circle) in the logo resembling the seven dragon balls spread across
+as a network ;)</p>
+</div>
+<div class="section" id="what-next">
+<h2>What Next ?</h2>
+<p>While we have come far from a trac based site to an automated site for CGRAN,
+more features (like repo stats, to name one) are to be implemented up the sleeve
+without posing any overhead to the OOT Module authors.</p>
+<p><em>P.S The current state of CGRAN could not have been achieved, if not for constant
+inputs from Nathan West and other PyBOMBS Task Froce members :)</em></p>
+</div>
+</p>
+  </div>
+</article><article class="summary">
+  <div>
+    <h2>
       <a href="http://ninjacomics.github.io/radioblogr/2014/09/Start the stack with right 3GPP specifications.html" rel="bookmark" title="Permalink to Start the stack with right 3GPP specifications">Start the stack with right 3GPP specifications</a>
     </h2>
     <p><p>Well, this is my first official post after starting this blog and after the
@@ -91,6 +182,7 @@ everyone who read this blog post for tips).</p>
   	          <nav>
 	            <h2>Categories</h2>
 	            <ul>
+	                <li ><a href="http://ninjacomics.github.io/radioblogr/category/bin.html">/bin</a></li>
 	                <li ><a href="http://ninjacomics.github.io/radioblogr/category/io.html">/io</a></li>
 	                <li ><a href="http://ninjacomics.github.io/radioblogr/category/radio.html">/radio</a></li>
 	            </ul>
