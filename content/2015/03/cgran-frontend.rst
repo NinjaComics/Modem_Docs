@@ -25,7 +25,7 @@ First off, the site's built with bits and pieces collected from different source
 
 * `Bootstrap Material Design framework`_ by Fez Vrasta(with some customization) 
   to style the site.
-* `Bootstrap tables plugin`_ by Wenzhixin, to make life with tables(OOT Module 
+* `Bootstrap tables plugin`_ by Wenzhixin, to make life with tables easy(OOT Module 
   List).
 * `Pelican-md-metayaml`_ plugin to read the YAML metadata and generate Module 
   pages.
@@ -68,7 +68,7 @@ info page. This doesn't fit the CGRAN model, as few already existing OOT Modules
 have license embedded into their README file. Not only does the user have to
 scroll down to get past the license information, it looks a bit odd on the
 individual pages. So what did we do ?
-Enter `Mainfest.yaml`_ (the format's subject to change) !!! The Manifest.yaml 
+Enter `Manifest.yaml`_ (the format's subject to change) !!! The Manifest.yaml 
 provides few mandatory fields to fill in, along with a description field, where
 the OOT Module author can write any information regarding the module, which 
 he/she thinks will be of best interest to the user.
@@ -79,6 +79,15 @@ Now, why is YAML the preferred file format ?
 * Easily readable on github (Assuming the OOT Modules reside on github)
 * CGRAN can scrape the necessary information to generate info for Module pages
   in markdown format (remember intelligent CGRAN ?)
+
+Let's talk Logo
+===============
+
+Finally, let's talk a bit about the logo. The new CGRAN logo is designed to 
+resemble an ecosystem of OOT Modules built around GNU Radio. **Self-interest-alert-**
+I am a Dragon Ball fan. That's why there are exactly seven circles,(including 
+the GNU Radio circle) in the logo resembling the seven dragon balls spread across 
+as a network ;) 
 
 What Next ?
 ===========

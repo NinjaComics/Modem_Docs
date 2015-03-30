@@ -34,36 +34,87 @@
 
 
       <article>
-        <h1><a href="http://ninjacomics.github.io/radioblogr/2014/09/Start the stack with right 3GPP specifications.html">Start the stack with right 3GPP specifications</a></h1>
-        <p>Well, this is my first official post after starting this blog and after the
-rather null <a class="reference external" href="http://ninjacomics.github.io/radioblogr/2014/07/Testpost.html">Testpost</a>. So here are few tips on starting to get to the right
-3GPP specifications, irrespective of what standard you want to work on. When I
-initially started reading the 3GPP specifications an year ago, I was not sure,
-if the one I chose would provide me with the information I needed. Also, I was
-really irritated by the fact that each and every line in any specification
-pointed to several other specifications (and those pointed to several others.
-Gosh ! I felt trapped in a loop of specs), but that's how specifications are
-written and we have to deal with them.</p>
-<p>So after going through lot of references provided in articles relevant to my
-problem, I ended up choosing the correct set of specs. That's one way of
-starting with the hunt for right set of specifications for your requirement.
-And this is pretty much how anyone who is interested in continuing their
-career in research will follow (atleast that's what I assume).
-Once you zero in on which specs to follow, the right place to hit is the
-<a class="reference external" href="http://www.3gpp.org/specifications/specification-numbering">3GPP Specification matrix</a>. This matrix has all the specs sorted according
-to their releases and refers to the respective standards(GSM, 3G, and 4G) with
-respective specification series. Each sepecification series addresses different
-areas of the stack and you can pick the newest and appropriate documents
-suitable for your need.</p>
-<p>While one can plunge into 3GPP Specification matrix directly, it is always a
-good practice to spend some time referring the relevant articles/papers and
-then come back to the matrix.</p>
-<p>And coming to the heavy reference of specifications inside another
-specification, you'll tend to ignore them once you get yourself more involved
-into the specifications and hit the right ones automatically once you
-understand them, which leaves me conveying the fact that, there is really no
-workaround or special way to understand 3GPP specifications (fooling around
-everyone who read this blog post for tips).</p>
+        <h1><a href="http://ninjacomics.github.io/radioblogr/2015/03/gr-cgran.html">CGRAN - A new look</a></h1>
+        <p>Recently I have been working on giving Comprehensive GNU Radio Archive Network
+(CGRAN) a new look. While the <a class="reference external" href="https://web.archive.org/web/20140829151613/https://www.cgran.org/wiki/Projects">old CGRAN site</a> was built using trac wiki pages,
+the new one looks more like a standard website, with nitty-gritty details like
+gnuradio version dependencies, tags associated with each OOT Module, more info
+about OOT module developers, etc., all packed in one place. The site's built
+using <a class="reference external" href="http://blog.getpelican.com/">pelican</a> static site generator (Hey ! I use pelican for building this blog
+as well :D) and uses bootstrap-material-design framework by Fez Vrasta, to style
+the site. Design is not just the only attraction to this site - the module page
+information is automated and most important of all, the site's tightly copuled
+with <a class="reference external" href="http://gnuradio.org/redmine/projects/pybombs/wiki">PyBOMBS</a>. Read along to know more !</p>
+<div class="section" id="design-idea">
+<h2>Design Idea</h2>
+<p>First off, the site's built with bits and pieces collected from different sources:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/FezVrasta/bootstrap-material-design">Bootstrap Material Design framework</a> by Fez Vrasta(with some customization)
+to style the site.</li>
+<li><a class="reference external" href="http://bootstrap-table.wenzhixin.net.cn/">Bootstrap tables plugin</a> by Wenzhixin, to make life with tables(OOT Module
+List).</li>
+<li><a class="reference external" href="https://github.com/joachimneu/pelican-md-metayaml">Pelican-md-metayaml</a> plugin to read the YAML metadata and generate Module
+pages.</li>
+</ul>
+<p>Also, while designing the site, I took a bit of linience in borrowing ideas from
+two similar websites - <a class="reference external" href="https://atom.io/">atom.io</a> and <a class="reference external" href="http://customelements.io/">customelements.io</a>. The front-page looks
+similar to the <a class="reference external" href="http://customelements.io/">customelements.io</a> with more emphasis on the list of OOT Modules.
+Unlike <a class="reference external" href="http://customelements.io/">customelements.io</a>, which is a standalone site for collection of various
+polymer elemets, CGRAN is a part of the GNU Radio family and it was enough that
+we display the condensed top-matter, as all the extra information concerning OOT
+Modules is available on GNU Radio wiki. That said, there are relevant links on
+the site to connect to the right wiki page :)</p>
+</div>
+<div class="section" id="rule-zero-pybombs-and-cgran">
+<h2>Rule Zero : PyBOMBS and CGRAN</h2>
+<p>Intelligent CGRAN and integrating it with PyBOMBS has been the top priority ever
+since PyBOMBS task force came into picture. The idea is to automatically generate
+a list of OOT modules available as PyBOMBS recipes and display them on CGRAN.</p>
+<p>What does this mean ?</p>
+<ul class="simple">
+<li>The OOT Module developer just has to write a PyBOMBS recipe,</li>
+<li>Pull a request for the recipe to be accpeted into PyBOMBS repo,</li>
+<li>Fill in the details in the Manifest file created by gr-modtool, in the module
+repo,</li>
+<li>Sit back while the CGRAN site collects information about the new module and
+generate a new page for it.</li>
+</ul>
+<p>Simple isn't it ?</p>
+</div>
+<div class="section" id="module-pages-and-manifest">
+<h2>Module Pages and Manifest</h2>
+<p>I always liked the <a class="reference external" href="https://atom.io/">atom.io</a>'s way of displaying a detailed information on its
+package/theme on a separate page(that way, the user can stay in a place and get
+more info about a project). I created the OOT Module pages in a similar fashion,
+but <a class="reference external" href="https://atom.io/">atom.io</a> uses the package/theme's README to display information on it's project
+info page. This doesn't fit the CGRAN model, as few already existing OOT Modules
+have license embedded into their README file. Not only does the user have to
+scroll down to get past the license information, it looks a bit odd on the
+individual pages. So what did we do ?
+Enter <a href="#id1"><span class="problematic" id="id2">`Mainfest.yaml`_</span></a> (the format's subject to change) !!! The Manifest.yaml
+provides few mandatory fields to fill in, along with a description field, where
+the OOT Module author can write any information regarding the module, which
+he/she thinks will be of best interest to the user.</p>
+<p>Now, why is YAML the preferred file format ?</p>
+<ul class="simple">
+<li>It is human readable</li>
+<li>Easily readable on github (Assuming the OOT Modules reside on github)</li>
+<li>CGRAN can scrape the necessary information to generate info for Module pages
+in markdown format (remember intelligent CGRAN ?)</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2>What Next ?</h2>
+<p>While we have come far from a trac based site to an automated site for CGRAN,
+more features (like repo stats, to name one) are to be implemented up the sleeve
+without posing any overhead to the OOT Module authors.</p>
+</div>
+<div class="system-messages section">
+<h2>Docutils System Messages</h2>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/home/ravi/Extras/radioblogr/content/2015/03/cgran-frontend.rst</tt>, line 63); <em><a href="#id2">backlink</a></em></p>
+Unknown target name: &quot;mainfest.yaml&quot;.</div>
+</div>
 
       </article>
 
@@ -73,6 +124,12 @@ everyone who read this blog post for tips).</p>
           <h3>Last posts</h3>
           <ol class="archive">
     
+
+
+      <li>
+<a href="http://ninjacomics.github.io/radioblogr/2014/09/Start the stack with right 3GPP specifications.html" rel="bookmark" title="Permalink to Start the stack with right 3GPP specifications">Start the stack with right 3GPP specifications</a>
+  <time datetime="2014-09-02T18:09:00" pubdate>Tue 02 September 2014</time>
+<p class="tags">tags: <a href="http://ninjacomics.github.io/radioblogr/tag/3gpp-specs.html">3GPP Specs</a></p></a>      </li>
 
 
       <li>
@@ -93,6 +150,7 @@ everyone who read this blog post for tips).</p>
   	          <nav>
 	            <h2>Categories</h2>
 	            <ul>
+	                <li ><a href="http://ninjacomics.github.io/radioblogr/category/bin.html">/bin</a></li>
 	                <li ><a href="http://ninjacomics.github.io/radioblogr/category/io.html">/io</a></li>
 	                <li ><a href="http://ninjacomics.github.io/radioblogr/category/radio.html">/radio</a></li>
 	            </ul>
