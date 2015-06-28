@@ -15,7 +15,7 @@ with &lt;a class="reference external" href="http://gnuradio.org/redmine/projects
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/FezVrasta/bootstrap-material-design"&gt;Bootstrap Material Design framework&lt;/a&gt; by Fez Vrasta(with some customization)
 to style the site.&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://bootstrap-table.wenzhixin.net.cn/"&gt;Bootstrap tables plugin&lt;/a&gt; by Wenzhixin, to make life with tables(OOT Module
+&lt;li&gt;&lt;a class="reference external" href="http://bootstrap-table.wenzhixin.net.cn/"&gt;Bootstrap tables plugin&lt;/a&gt; by Wenzhixin, to make life with tables easy(OOT Module
 List).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://github.com/joachimneu/pelican-md-metayaml"&gt;Pelican-md-metayaml&lt;/a&gt; plugin to read the YAML metadata and generate Module
 pages.&lt;/li&gt;
@@ -36,7 +36,7 @@ since PyBOMBS task force came into picture. The idea is to automatically generat
 a list of OOT modules available as PyBOMBS recipes and display them on CGRAN.&lt;/p&gt;
 &lt;p&gt;What does this mean ?&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;The OOT Module developer just has to write a PyBOMBS recipe,&lt;/li&gt;
+&lt;li&gt;The OOT Module developer has to write a PyBOMBS recipe,&lt;/li&gt;
 &lt;li&gt;Pull a request for the recipe to be accpeted into PyBOMBS repo,&lt;/li&gt;
 &lt;li&gt;Fill in the details in the Manifest file created by gr-modtool, in the module
 repo,&lt;/li&gt;
@@ -55,7 +55,7 @@ info page. This doesn't fit the CGRAN model, as few already existing OOT Modules
 have license embedded into their README file. Not only does the user have to
 scroll down to get past the license information, it looks a bit odd on the
 individual pages. So what did we do ?
-Enter &lt;a href="#id1"&gt;&lt;span class="problematic" id="id2"&gt;`Mainfest.yaml`_&lt;/span&gt;&lt;/a&gt; (the format's subject to change) !!! The Manifest.yaml
+Enter &lt;a class="reference external" href="https://github.com/n-west/manifests"&gt;Manifest.yaml&lt;/a&gt; (the format's subject to change) !!! The Manifest.yaml
 provides few mandatory fields to fill in, along with a description field, where
 the OOT Module author can write any information regarding the module, which
 he/she thinks will be of best interest to the user.&lt;/p&gt;
@@ -67,17 +67,21 @@ he/she thinks will be of best interest to the user.&lt;/p&gt;
 in markdown format (remember intelligent CGRAN ?)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+&lt;div class="section" id="let-s-talk-logo"&gt;
+&lt;h2&gt;Let's talk Logo&lt;/h2&gt;
+&lt;p&gt;Finally, let's talk a bit about the logo. The new CGRAN logo is designed to
+resemble an ecosystem of OOT Modules built around GNU Radio. &lt;strong&gt;Self-interest-alert-&lt;/strong&gt;
+I am a Dragon Ball fan. That's why there are exactly seven circles,(including
+the GNU Radio circle) in the logo resembling the seven dragon balls spread across
+as a network ;)&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class="section" id="what-next"&gt;
 &lt;h2&gt;What Next ?&lt;/h2&gt;
 &lt;p&gt;While we have come far from a trac based site to an automated site for CGRAN,
 more features (like repo stats, to name one) are to be implemented up the sleeve
 without posing any overhead to the OOT Module authors.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="system-messages section"&gt;
-&lt;h2&gt;Docutils System Messages&lt;/h2&gt;
-&lt;div class="system-message" id="id1"&gt;
-&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;/home/ravi/Extras/radioblogr/content/2015/03/cgran-frontend.rst&lt;/tt&gt;, line 63); &lt;em&gt;&lt;a href="#id2"&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-Unknown target name: &amp;quot;mainfest.yaml&amp;quot;.&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;P.S The current state of CGRAN could not have been achieved, if not for constant
+inputs from Nathan West and other PyBOMBS Task Froce members :)&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="CGRAN"></category><category term="GNU Radio"></category></entry><entry><title>Start the stack with right 3GPP specifications</title><link href="http://ninjacomics.github.io/radioblogr/2014/09/Start%20the%20stack%20with%20right%203GPP%20specifications.html" rel="alternate"></link><updated>2014-09-02T18:09:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2014-09-02:2014/09/Start the stack with right 3GPP specifications.html</id><summary type="html">&lt;p&gt;Well, this is my first official post after starting this blog and after the
 rather null &lt;a class="reference external" href="http://ninjacomics.github.io/radioblogr/2014/07/Testpost.html"&gt;Testpost&lt;/a&gt;. So here are few tips on starting to get to the right

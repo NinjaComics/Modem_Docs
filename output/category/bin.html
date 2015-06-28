@@ -1,44 +1,52 @@
-<!doctype html>
-<html lang="">	
-<head>
-	<meta charset="utf-8"/>
-	<title>/bin - Ravi Sharan's /radio/bin/io</title>	
-	<meta name="author" content="Ravi Sharan">
-	
-
-	<link rel="stylesheet" href="http://ninjacomics.github.io/radioblogr/theme/css/main.css" type="text/css" />
-		
-
-
-    <link href="http://feeds.feedburner.com/radioblogrfeeds/main.xml" type="application/atom+xml" rel="alternate" title="Ravi Sharan's /radio/bin/io Atom Feed" />
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <title>Ravi Sharan's /radio/bin/io</title>
+  <link href="http://ninjacomics.github.io/radioblogr/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://ninjacomics.github.io/radioblogr/theme/css/material.min.css" rel="stylesheet">
+  <link href="http://ninjacomics.github.io/radioblogr/theme/css/ripples.min.css" rel="stylesheet">
+  <link href="http://ninjacomics.github.io/radioblogr/theme/css/roboto.min.css" rel="stylesheet">
+  <link href="http://ninjacomics.github.io/radioblogr/theme/css/custom.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-	
 <body>
+<div class="bs-component">
+  <div class="navbar navbar-default shadow-z-1" 
+	  style="border-top: 4px solid #009688; background: #fff; 
+	  color: #009688;">
+    <div class ="container" id="crunch">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" 
+		data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html" style="font-size: 20px">
+		Ravi Sharan's /radio/bin/io</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav navbar-right">
+	  <li><a href="">Archives</a></li>
+	  <li><a href="">About</a></li>
+	</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" id="crunch">
 
-    <div class="container">
-	  
-	  <header role="banner">
-	    <div class="feeds">
-	      <a href="http://ninjacomics.github.io/radioblogr/radioblogrfeeds/main.xml" rel="alternate"><img src="http://ninjacomics.github.io/radioblogr/theme/images/icons/feed-32px.png" alt="atom feed"/></a>
-	    </div>
-	      <nav class="pages">
-			  <a href="http://ninjacomics.github.io/radioblogr/pages/about.html">About</a>
-	      </nav>
-		<a href="http://ninjacomics.github.io/radioblogr" class="title">Ravi Sharan's /radio/bin/io</a>
-      </header>
-	
-	  <div class="wrapper">
 
-		  <div role="main" class="content">
 
-<h1>Posts categorized under: /bin</h1>
-
-<article class="summary">
-  <div>
-    <h2>
-      <a href="http://ninjacomics.github.io/radioblogr/2015/03/gr-cgran.html" rel="bookmark" title="Permalink to CGRAN - A new look">CGRAN - A new look</a>
-    </h2>
-    <p><p>Recently I have been working on giving Comprehensive GNU Radio Archive Network
+      <article>
+        <h1><a href="http://ninjacomics.github.io/radioblogr/2015/03/gr-cgran.html">CGRAN - A new look</a></h1>
+	<div style="padding: 0px 0px 10px 0px;">
+	  <time datetime="2015-03-29T20:17:00" pubdate 
+		style="font-style: italic;
+		font-size: 14px; color: #757575;">
+		Sun 29 March 2015</time> 
+        </div>
+	<p>Recently I have been working on giving Comprehensive GNU Radio Archive Network
 (CGRAN) a new look. While the <a class="reference external" href="https://web.archive.org/web/20140829151613/https://www.cgran.org/wiki/Projects">old CGRAN site</a> was built using trac wiki pages,
 the new one looks more like a standard website, with nitty-gritty details like
 gnuradio version dependencies, tags associated with each OOT Module, more info
@@ -54,7 +62,7 @@ with <a class="reference external" href="http://gnuradio.org/redmine/projects/py
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/FezVrasta/bootstrap-material-design">Bootstrap Material Design framework</a> by Fez Vrasta(with some customization)
 to style the site.</li>
-<li><a class="reference external" href="http://bootstrap-table.wenzhixin.net.cn/">Bootstrap tables plugin</a> by Wenzhixin, to make life with tables(OOT Module
+<li><a class="reference external" href="http://bootstrap-table.wenzhixin.net.cn/">Bootstrap tables plugin</a> by Wenzhixin, to make life with tables easy(OOT Module
 List).</li>
 <li><a class="reference external" href="https://github.com/joachimneu/pelican-md-metayaml">Pelican-md-metayaml</a> plugin to read the YAML metadata and generate Module
 pages.</li>
@@ -75,7 +83,7 @@ since PyBOMBS task force came into picture. The idea is to automatically generat
 a list of OOT modules available as PyBOMBS recipes and display them on CGRAN.</p>
 <p>What does this mean ?</p>
 <ul class="simple">
-<li>The OOT Module developer just has to write a PyBOMBS recipe,</li>
+<li>The OOT Module developer has to write a PyBOMBS recipe,</li>
 <li>Pull a request for the recipe to be accpeted into PyBOMBS repo,</li>
 <li>Fill in the details in the Manifest file created by gr-modtool, in the module
 repo,</li>
@@ -94,7 +102,7 @@ info page. This doesn't fit the CGRAN model, as few already existing OOT Modules
 have license embedded into their README file. Not only does the user have to
 scroll down to get past the license information, it looks a bit odd on the
 individual pages. So what did we do ?
-Enter <a href="#id1"><span class="problematic" id="id2">`Mainfest.yaml`_</span></a> (the format's subject to change) !!! The Manifest.yaml
+Enter <a class="reference external" href="https://github.com/n-west/manifests">Manifest.yaml</a> (the format's subject to change) !!! The Manifest.yaml
 provides few mandatory fields to fill in, along with a description field, where
 the OOT Module author can write any information regarding the module, which
 he/she thinks will be of best interest to the user.</p>
@@ -106,68 +114,55 @@ he/she thinks will be of best interest to the user.</p>
 in markdown format (remember intelligent CGRAN ?)</li>
 </ul>
 </div>
+<div class="section" id="let-s-talk-logo">
+<h2>Let's talk Logo</h2>
+<p>Finally, let's talk a bit about the logo. The new CGRAN logo is designed to
+resemble an ecosystem of OOT Modules built around GNU Radio. <strong>Self-interest-alert-</strong>
+I am a Dragon Ball fan. That's why there are exactly seven circles,(including
+the GNU Radio circle) in the logo resembling the seven dragon balls spread across
+as a network ;)</p>
+</div>
 <div class="section" id="what-next">
 <h2>What Next ?</h2>
 <p>While we have come far from a trac based site to an automated site for CGRAN,
 more features (like repo stats, to name one) are to be implemented up the sleeve
 without posing any overhead to the OOT Module authors.</p>
-</div>
-<div class="system-messages section">
-<h2>Docutils System Messages</h2>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/home/ravi/Extras/radioblogr/content/2015/03/cgran-frontend.rst</tt>, line 63); <em><a href="#id2">backlink</a></em></p>
-Unknown target name: &quot;mainfest.yaml&quot;.</div>
-</div>
-</p>
-  </div>
-</article>
-<div class="pagination">
-    Page 1 / 1
+<p><em>P.S The current state of CGRAN could not have been achieved, if not for constant
+inputs from Nathan West and other PyBOMBS Task Froce members :)</em></p>
 </div>
 
-		  </div>	
-		  
-		  <div class="sidebar">
-		    <div class="sidebar-container" >
+      </article>
+
+      <hr />
+
+    
 
 
-  	          <nav>
-	            <h2>Categories</h2>
-	            <ul>
-	                <li class="active"><a href="http://ninjacomics.github.io/radioblogr/category/bin.html">/bin</a></li>
-	                <li ><a href="http://ninjacomics.github.io/radioblogr/category/io.html">/io</a></li>
-	                <li ><a href="http://ninjacomics.github.io/radioblogr/category/radio.html">/radio</a></li>
-	            </ul>
-	          </nav>
 
-	            <aside>
-	            <h2>Social</h2>
-			      <ul class="social">
-				    <li><a href="https://github.com/NinjaComics">Github</a><i></i></li>
-				    <li><a href="https://www.google.com/+RaviSharan">Google Plus</a><i></i></li>
-			      </ul>
-			    </aside>
+</div>
+<!-- jQuery -->
+<script src="http://ninjacomics.github.io/radioblogr/theme/js/jquery-1.11.3.min.js"></script>
 
-	            <aside>
-	              <h2>Blogroll</h2>
-	              <ul>
-	                  <li><a href="http://sigquit.wordpress.com/">SIGQUIT</a></li>
-	              </ul>
-	            </aside>
-	        </div>
-		  </div>
+<!-- Bootstrap js -->
+<script src="http://ninjacomics.github.io/radioblogr/theme/js/bootstrap.min.js"></script>
 
-	  </div>
-
-      <footer>
-		<p role="contentinfo">
-		  Ravi Sharan - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
-    	</p>
-
-	  </footer>	
-
-	</div>
-	
-
+<!-- Material and ripple js -->
+<script src="http://ninjacomics.github.io/radioblogr/theme/js/material.min.js"></script>
+<script src="http://ninjacomics.github.io/radioblogr/theme/js/ripples.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $.material.init();
+  });
+</script>
 </body>
-</html>
+<footer class="footer" style="text-align: center; font-size: 14px;">
+  <div class="container">
+  <p>
+  &copy; 2015 Ravi Sharan<br>
+  Content licensed under the CC-BY-SA License.
+  Find me on <a href="https://www.google.com/+RaviSharan">Google Plus</a>,
+  <a href="https://twitter.com/BAGRaviSharan">Twitter</a> and
+  <a href="https://github.com/NinjaComics">Github</a>.
+  </p>
+  </div>
+</footer>
