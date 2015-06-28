@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Archives</h1>
+
+<div style="font-size: 20px; padding-top: 20px;">
+
+{% for article in articles %}
+
+<li>
+
+{% include "article_link.inc.html" %}
+
+</li>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

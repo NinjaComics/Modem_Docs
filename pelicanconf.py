@@ -11,7 +11,7 @@ SITEURL = 'http://ninjacomics.github.io/radioblogr'
 TIMEZONE = 'Asia/Kolkata'
 DEFAULT_LANG = u'en'
 DELETE_OUTPUT_DIRECTORY = True
-THEME = "proto-clean"
+THEME = "random-theme"
 PATH = "content"
 
 #URL Settings

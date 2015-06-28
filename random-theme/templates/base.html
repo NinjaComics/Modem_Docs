@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <title>{{ SITENAME }}</title>
+  <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/material.min.css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/ripples.min.css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/roboto.min.css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/custom.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="bs-component">
+  <div class="navbar navbar-default shadow-z-1" 
+	  style="border-top: 4px solid #009688; background: #fff; 
+	  color: #009688;">
+    <div class ="container" id="crunch">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" 
+		data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+	<a class="navbar-brand" href="{{ SITEURL }}/index.html" 
+		style="font-size: 20px">
+		Ravi Sharan's /radio/bin/io</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav navbar-right">
+	  <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+	  <li><a href="{{ SITEURL }}/pages/about.html">About</a></li>
+	  <li><a href="">Archives</a></li>
+	  <li><a href="">About</a></li>
+	</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" id="crunch">
+{% block content %}
+{% endblock %}
+</div>
+<!-- jQuery -->
+<script src="{{ SITEURL }}/theme/js/jquery-1.11.3.min.js"></script>
+
+<!-- Bootstrap js -->
+<script src="{{ SITEURL }}/theme/js/bootstrap.min.js"></script>
+
+<!-- Material and ripple js -->
+<script src="{{ SITEURL }}/theme/js/material.min.js"></script>
+<script src="{{ SITEURL }}/theme/js/ripples.min.js"></script>
+<script src="theme/js/jquery-1.11.3.min.js"></script>
+
+<!-- Bootstrap js -->
+<script src="theme/js/bootstrap.min.js"></script>
+
+<!-- Material and ripple js -->
+<script src="theme/js/material.min.js"></script>
+<script src="theme/js/ripples.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $.material.init();
+  });
+</script>
+</body>
+<footer class="footer" style="text-align: center; font-size: 14px;">
+  <div class="container">
+  <p>
+  &copy; 2015 Ravi Sharan<br>
+  Content licensed under the CC-BY-SA License.
+  Find me on <a href="https://www.google.com/+RaviSharan">Google Plus</a>,
+  <a href="https://twitter.com/BAGRaviSharan">Twitter</a> and
+  <a href="https://github.com/NinjaComics">Github</a>.
+  </p>
+  </div>
+</footer>
