@@ -41,7 +41,7 @@
 
 
       <article>
-        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html">Custom tracesource to get CQI info in ns-3 apps</a></h1>
+        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html">Custom tracing for CQI info in ns-3 apps</a></h1>
 	<div style="padding: 0px 0px 10px 0px;">
 	  <time datetime="2016-03-10T13:37:00" pubdate 
 		style="font-style: italic;
@@ -50,9 +50,8 @@
         </div>
 	<p>I am updating something on this blog exactly after a year - minus 19 days plus
 a leap day. In this post, I will walkthrough the steps required to add a tracesource
-and a corresponding tracesink in ns-3 applications to acquire the downlink Channel
-Quality Indicator (CQI) information sent by each UE attached to the respective
-eNB in the network.</p>
+to ns-3 applications to acquire the downlink Channel Quality Indicator (CQI)
+information sent by each UE attached to the respective eNB in the network.</p>
 <p>A bit about CQI in lte - the eNB receives information from the UE
 in the form of CQI (ranging from 0 to 15), according to the perceived downlink
 channel at the UE. The higher the CQI, the better the channel is. Thus, based on
@@ -87,11 +86,15 @@ tree:</p>
 using the Config system, the <tt class="docutils literal">TracedCallback&lt; &gt;</tt> contains trace information about the
 CQI and the typedef void <tt class="docutils literal">(* ReportCqiTraceCallBack)</tt> provides a callback
 mechanism to the tracesource we just created.</p>
-<p>In ns-3, the CQI values from each UE, packed in the form of control messages
+<p>The CQI values from each UE, packed in the form of control messages
 appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
 catch the CQI values at the lowest level of the stack and route it to our application.
 Specifically, we are piping the information held in the <tt class="docutils literal">CqiListElements_s</tt> struct
-that is later passed onto the MAC and to the Scheduler layer for further decision making.</p>
+that is later passed onto the MAC and to the Scheduler layer for further decision making.
+The <tt class="docutils literal">CqiListElements_s</tt> struct by default contains RNTI and a vector of CQI values,
+along with the other elements like CQI type (periodic or otherwise) etc.,
+We add the cellId argument to our tracesource to differentiate between the eNBs,
+given there are many eNBs in the application.</p>
 <p>The further process of connecting a tracesink to the source, in the application,
 is left to the reader. In essence, the tracing mechanism in ns-3 provides a neat
 solution to pipe the information that the stack uses during the simulation, without

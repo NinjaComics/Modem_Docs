@@ -1,5 +1,5 @@
-Custom tracesource to get CQI info in ns-3 apps
-###############################################
+Custom tracing for CQI info in ns-3 apps
+########################################
 
 :date: 2016-03-10 13:37
 :tags: ns3, Tracing
@@ -9,9 +9,8 @@ Custom tracesource to get CQI info in ns-3 apps
 
 I am updating something on this blog exactly after a year - minus 19 days plus 
 a leap day. In this post, I will walkthrough the steps required to add a tracesource 
-and a corresponding tracesink in ns-3 applications to acquire the downlink Channel 
-Quality Indicator (CQI) information sent by each UE attached to the respective 
-eNB in the network. 
+to ns-3 applications to acquire the downlink Channel Quality Indicator (CQI) 
+information sent by each UE attached to the respective eNB in the network. 
 
 A bit about CQI in lte - the eNB receives information from the UE
 in the form of CQI (ranging from 0 to 15), according to the perceived downlink 
@@ -67,14 +66,15 @@ using the Config system, the ``TracedCallback< >`` contains trace information ab
 CQI and the typedef void ``(* ReportCqiTraceCallBack)`` provides a callback 
 mechanism to the tracesource we just created.
 
-In ns-3, the CQI values from each UE, packed in the form of control messages 
+The CQI values from each UE, packed in the form of control messages 
 appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
 catch the CQI values at the lowest level of the stack and route it to our application.
 Specifically, we are piping the information held in the ``CqiListElements_s`` struct
 that is later passed onto the MAC and to the Scheduler layer for further decision making.
-The ``CqiListElements_s`` struct by default contains only RNTI and 
-a vector of CQI values. We add the cellId argument to our TraceSource to differentiate
-between the eNBs, given there are many eNBs in the application.
+The ``CqiListElements_s`` struct by default contains RNTI and a vector of CQI values,
+along with the other elements like CQI type (periodic or otherwise) etc., 
+We add the cellId argument to our tracesource to differentiate between the eNBs, 
+given there are many eNBs in the application.
 
 The further process of connecting a tracesink to the source, in the application,
 is left to the reader. In essence, the tracing mechanism in ns-3 provides a neat

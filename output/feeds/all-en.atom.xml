@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-03-10T13:37:00+05:30</updated><entry><title>Custom tracesource to get CQI info in ns-3 apps</title><link href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html" rel="alternate"></link><updated>2016-03-10T13:37:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2016-03-10:2016/03/Tracing.html</id><summary type="html">&lt;p&gt;I am updating something on this blog exactly after a year - minus 19 days plus
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-03-10T13:37:00+05:30</updated><entry><title>Custom tracing for CQI info in ns-3 apps</title><link href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html" rel="alternate"></link><updated>2016-03-10T13:37:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2016-03-10:2016/03/Tracing.html</id><summary type="html">&lt;p&gt;I am updating something on this blog exactly after a year - minus 19 days plus
 a leap day. In this post, I will walkthrough the steps required to add a tracesource
-and a corresponding tracesink in ns-3 applications to acquire the downlink Channel
-Quality Indicator (CQI) information sent by each UE attached to the respective
-eNB in the network.&lt;/p&gt;
+to ns-3 applications to acquire the downlink Channel Quality Indicator (CQI)
+information sent by each UE attached to the respective eNB in the network.&lt;/p&gt;
 &lt;p&gt;A bit about CQI in lte - the eNB receives information from the UE
 in the form of CQI (ranging from 0 to 15), according to the perceived downlink
 channel at the UE. The higher the CQI, the better the channel is. Thus, based on
@@ -38,11 +37,15 @@ tree:&lt;/p&gt;
 using the Config system, the &lt;tt class="docutils literal"&gt;TracedCallback&amp;lt; &amp;gt;&lt;/tt&gt; contains trace information about the
 CQI and the typedef void &lt;tt class="docutils literal"&gt;(* ReportCqiTraceCallBack)&lt;/tt&gt; provides a callback
 mechanism to the tracesource we just created.&lt;/p&gt;
-&lt;p&gt;In ns-3, the CQI values from each UE, packed in the form of control messages
+&lt;p&gt;The CQI values from each UE, packed in the form of control messages
 appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
 catch the CQI values at the lowest level of the stack and route it to our application.
 Specifically, we are piping the information held in the &lt;tt class="docutils literal"&gt;CqiListElements_s&lt;/tt&gt; struct
-that is later passed onto the MAC and to the Scheduler layer for further decision making.&lt;/p&gt;
+that is later passed onto the MAC and to the Scheduler layer for further decision making.
+The &lt;tt class="docutils literal"&gt;CqiListElements_s&lt;/tt&gt; struct by default contains RNTI and a vector of CQI values,
+along with the other elements like CQI type (periodic or otherwise) etc.,
+We add the cellId argument to our tracesource to differentiate between the eNBs,
+given there are many eNBs in the application.&lt;/p&gt;
 &lt;p&gt;The further process of connecting a tracesink to the source, in the application,
 is left to the reader. In essence, the tracing mechanism in ns-3 provides a neat
 solution to pipe the information that the stack uses during the simulation, without
