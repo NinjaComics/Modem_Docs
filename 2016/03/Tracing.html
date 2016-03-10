@@ -68,13 +68,12 @@ MakeTraceSourceAccessor (&amp;LteEnbPhy::m_reportCqiTrace),
 </dl>
 </blockquote>
 <p>In <tt class="docutils literal"><span class="pre">lte-enb-phy.h</span></tt>:</p>
-<p>TracedCallback declaration
-.. code-block:: C++</p>
-<blockquote>
-TracedCallback&lt;uint16_t, uint16_t, std::vector &lt;uint8_t&gt; &gt; m_reportCqiTrace;</blockquote>
+<p>TracedCallback declaration</p>
+<div class="highlight"><pre><span></span><span class="n">TracedCallback</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="p">,</span> <span class="kt">uint16_t</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">m_reportCqiTrace</span><span class="p">;</span>
+</pre></div>
 <p>The typedef for the callback function signature</p>
-<div class="highlight"><pre>typedef void (* ReportCqiTracedCallback)
-    (uint16_t cellId, uint16_t rnti, std::vector &lt;uint8_t&gt;);
+<div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span> <span class="n">ReportCqiTracedCallback</span><span class="p">)</span>
+    <span class="p">(</span><span class="kt">uint16_t</span> <span class="n">cellId</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">rnti</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="section" id="what-did-we-do-in-the-previous-section">

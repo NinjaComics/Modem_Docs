@@ -28,13 +28,12 @@ MakeTraceSourceAccessor (&amp;amp;LteEnbPhy::m_reportCqiTrace),
 &lt;/dl&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lte-enb-phy.h&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
-&lt;p&gt;TracedCallback declaration
-.. code-block:: C++&lt;/p&gt;
-&lt;blockquote&gt;
-TracedCallback&amp;lt;uint16_t, uint16_t, std::vector &amp;lt;uint8_t&amp;gt; &amp;gt; m_reportCqiTrace;&lt;/blockquote&gt;
+&lt;p&gt;TracedCallback declaration&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TracedCallback&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;uint16_t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;uint16_t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;uint8_t&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;m_reportCqiTrace&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The typedef for the callback function signature&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;typedef void (* ReportCqiTracedCallback)
-    (uint16_t cellId, uint16_t rnti, std::vector &amp;lt;uint8_t&amp;gt;);
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;typedef&lt;/span&gt; &lt;span class="nf"&gt;void&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;ReportCqiTracedCallback&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint16_t&lt;/span&gt; &lt;span class="n"&gt;cellId&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;uint16_t&lt;/span&gt; &lt;span class="n"&gt;rnti&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;uint8_t&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-did-we-do-in-the-previous-section"&gt;
