@@ -39,7 +39,7 @@
 <div class="container" id="crunch">
 
 <article>
-  <h1>Custom tracesource to get CQI info in ns-3 apps</h1>
+  <h1>Custom tracing for CQI info in ns-3 apps</h1>
   <p>I am updating something on this blog exactly after a year - minus 19 days plus
 a leap day. In this post, I will walkthrough the steps required to add a tracesource
 and a corresponding tracesink in ns-3 applications to acquire the downlink Channel
@@ -79,7 +79,7 @@ tree:</p>
 using the Config system, the <tt class="docutils literal">TracedCallback&lt; &gt;</tt> contains trace information about the
 CQI and the typedef void <tt class="docutils literal">(* ReportCqiTraceCallBack)</tt> provides a callback
 mechanism to the tracesource we just created.</p>
-<p>In ns-3, the CQI values from each UE, packed in the form of control messages
+<p>The CQI values from each UE, packed in the form of control messages
 appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
 catch the CQI values at the lowest level of the stack and route it to our application.
 Specifically, we are piping the information held in the <tt class="docutils literal">CqiListElements_s</tt> struct
