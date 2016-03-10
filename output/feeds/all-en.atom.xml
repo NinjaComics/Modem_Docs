@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2015-03-29T20:17:00+05:30</updated><entry><title>CGRAN - A new look</title><link href="http://ninjacomics.github.io/radioblogr/2015/03/gr-cgran.html" rel="alternate"></link><updated>2015-03-29T20:17:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2015-03-29:2015/03/gr-cgran.html</id><summary type="html">&lt;p&gt;Recently I have been working on giving Comprehensive GNU Radio Archive Network
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-07-01T11:34:00+05:30</updated><entry><title>Custom tracesource to get CQI info in ns-3 apps</title><link href="http://ninjacomics.github.io/radioblogr/2016/07/Tracing.html" rel="alternate"></link><updated>2016-07-01T11:34:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2016-07-01:2016/07/Tracing.html</id><summary type="html">&lt;p&gt;I am updating something on this blog exactly after a year - minus 19 days plus
+a leap day. In this post, I will walkthrough the steps required to add a tracesource
+and a corresponding tracesink in ns-3 applications to acquire the downlink Channel
+Quality Indicator (CQI) information sent by each UE attached to the respective
+eNB in the network.&lt;/p&gt;
+&lt;p&gt;A bit about CQI in lte - the eNB receives information from the UE
+in the form of CQI (ranging from 0 to 15), according to the perceived downlink
+channel at the UE. The higher the CQI, the better the channel is. Thus, based on
+the CQI received from the UE, appropriate modulation &amp;amp; coding scheme (MCS) is used
+to serve the UE better. The CQI reporting modes can either be periodic or aperiodic
+in time and wideband or subband in frequency, based on the eNB implementation.
+Further information on CQI reporting can be found elsewhere on the internet.
+For now, let's get to the main part of this log.&lt;/p&gt;
+&lt;div class="section" id="custom-tracesource-and-callback-for-cqi"&gt;
+&lt;h2&gt;Custom tracesource and Callback for CQI&lt;/h2&gt;
+&lt;p&gt;Add the following piece(s) of code in the respective files in your ns-3 source
+tree:&lt;/p&gt;
+&lt;p&gt;In &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lte-enb-phy.cc&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
+&lt;p&gt;Adding a tracesource
+.. code-block:: C++&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;.AddTraceSource (&amp;quot;ReportCqiValues&amp;quot;,&lt;/dt&gt;
+&lt;dd&gt;&amp;quot;DL transmission PHY layer CQI statistics.&amp;quot;,
+MakeTraceSourceAccessor (&amp;amp;LteEnbPhy::m_reportCqiTrace),
+&amp;quot;ns3::LteEnbPhy::ReportCqiTracedCallback&amp;quot;)&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lte-enb-phy.h&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
+&lt;p&gt;TracedCallback declaration
+.. code-block:: C++&lt;/p&gt;
+&lt;blockquote&gt;
+TracedCallback&amp;lt;uint16_t, uint16_t, std::vector &amp;lt;uint8_t&amp;gt; &amp;gt; m_reportCqiTrace;&lt;/blockquote&gt;
+&lt;p&gt;The typedef for the callback function signature&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;typedef void (* ReportCqiTracedCallback)
+    (uint16_t cellId, uint16_t rnti, std::vector &amp;lt;uint8_t&amp;gt;);
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-did-we-do-in-the-previous-section"&gt;
+&lt;h2&gt;What did we do in the previous section ?&lt;/h2&gt;
+&lt;p&gt;In the above section, the &lt;tt class="docutils literal"&gt;AddTraceSource&lt;/tt&gt; provides hooks to the ns-3 application
+using the Config system, the &lt;tt class="docutils literal"&gt;TracedCallback&amp;lt; &amp;gt;&lt;/tt&gt; contains trace information about the
+CQI and the typedef void &lt;tt class="docutils literal"&gt;(* ReportCqiTraceCallBack)&lt;/tt&gt; provides a callback
+mechanism to the tracesource we just created.&lt;/p&gt;
+&lt;p&gt;In ns-3, the CQI values from each UE, packed in the form of control messages
+appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
+catch the CQI values at the lowest level of the stack and route it to our application.
+Specifically, we are piping the information held in the &lt;tt class="docutils literal"&gt;CqiListElements_s&lt;/tt&gt; struct
+that is later passed onto the MAC and to the Scheduler layer for further decision making.&lt;/p&gt;
+&lt;p&gt;The further process of connecting a tracesink to the source, in the application,
+is left to the reader.In essence, the tracing mechanism in ns-3 provides a neat
+solution to pipe the information that the stack uses during the simulation, without
+disrupting the actual simulation.&lt;/p&gt;
+&lt;p&gt;Pip-Pip !&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="ns3"></category><category term="Tracing"></category></entry><entry><title>CGRAN - A new look</title><link href="http://ninjacomics.github.io/radioblogr/2015/03/gr-cgran.html" rel="alternate"></link><updated>2015-03-29T20:17:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2015-03-29:2015/03/gr-cgran.html</id><summary type="html">&lt;p&gt;Recently I have been working on giving Comprehensive GNU Radio Archive Network
 (CGRAN) a new look. While the &lt;a class="reference external" href="https://web.archive.org/web/20140829151613/https://www.cgran.org/wiki/Projects"&gt;old CGRAN site&lt;/a&gt; was built using trac wiki pages,
 the new one looks more like a standard website, with nitty-gritty details like
 gnuradio version dependencies, tags associated with each OOT Module, more info
