@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/bin.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-07-01T11:34:00+05:30</updated><entry><title>Custom tracesource to get CQI info in ns-3 apps</title><link href="http://ninjacomics.github.io/radioblogr/2016/07/Tracing.html" rel="alternate"></link><updated>2016-07-01T11:34:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2016-07-01:2016/07/Tracing.html</id><summary type="html">&lt;p&gt;I am updating something on this blog exactly after a year - minus 19 days plus
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/bin.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-03-10T13:37:00+05:30</updated><entry><title>Custom tracesource to get CQI info in ns-3 apps</title><link href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html" rel="alternate"></link><updated>2016-03-10T13:37:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2016-03-10:2016/03/Tracing.html</id><summary type="html">&lt;p&gt;I am updating something on this blog exactly after a year - minus 19 days plus
 a leap day. In this post, I will walkthrough the steps required to add a tracesource
 and a corresponding tracesink in ns-3 applications to acquire the downlink Channel
 Quality Indicator (CQI) information sent by each UE attached to the respective
@@ -17,24 +17,19 @@ For now, let's get to the main part of this log.&lt;/p&gt;
 &lt;p&gt;Add the following piece(s) of code in the respective files in your ns-3 source
 tree:&lt;/p&gt;
 &lt;p&gt;In &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lte-enb-phy.cc&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
-&lt;p&gt;Adding a tracesource
-.. code-block:: C++&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;.AddTraceSource (&amp;quot;ReportCqiValues&amp;quot;,&lt;/dt&gt;
-&lt;dd&gt;&amp;quot;DL transmission PHY layer CQI statistics.&amp;quot;,
-MakeTraceSourceAccessor (&amp;amp;LteEnbPhy::m_reportCqiTrace),
-&amp;quot;ns3::LteEnbPhy::ReportCqiTracedCallback&amp;quot;)&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Adding a TraceSource&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AddTraceSource&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ReportCqiValues&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                 &lt;span class="s"&gt;&amp;quot;DL transmission PHY layer CQI statistics.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                 &lt;span class="n"&gt;MakeTraceSourceAccessor&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;LteEnbPhy&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;m_reportCqiTrace&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+                 &lt;span class="s"&gt;&amp;quot;ns3::LteEnbPhy::ReportCqiTracedCallback&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lte-enb-phy.h&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
-&lt;p&gt;TracedCallback declaration
-.. code-block:: C++&lt;/p&gt;
-&lt;blockquote&gt;
-TracedCallback&amp;lt;uint16_t, uint16_t, std::vector &amp;lt;uint8_t&amp;gt; &amp;gt; m_reportCqiTrace;&lt;/blockquote&gt;
+&lt;p&gt;Adding a TracedCallback declaration&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TracedCallback&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;uint16_t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;uint16_t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;uint8_t&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;m_reportCqiTrace&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The typedef for the callback function signature&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;typedef void (* ReportCqiTracedCallback)
-    (uint16_t cellId, uint16_t rnti, std::vector &amp;lt;uint8_t&amp;gt;);
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;typedef&lt;/span&gt; &lt;span class="nf"&gt;void&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;ReportCqiTracedCallback&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;uint16_t&lt;/span&gt; &lt;span class="n"&gt;cellId&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;uint16_t&lt;/span&gt; &lt;span class="n"&gt;rnti&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;uint8_t&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="what-did-we-do-in-the-previous-section"&gt;
@@ -49,7 +44,7 @@ catch the CQI values at the lowest level of the stack and route it to our applic
 Specifically, we are piping the information held in the &lt;tt class="docutils literal"&gt;CqiListElements_s&lt;/tt&gt; struct
 that is later passed onto the MAC and to the Scheduler layer for further decision making.&lt;/p&gt;
 &lt;p&gt;The further process of connecting a tracesink to the source, in the application,
-is left to the reader.In essence, the tracing mechanism in ns-3 provides a neat
+is left to the reader. In essence, the tracing mechanism in ns-3 provides a neat
 solution to pipe the information that the stack uses during the simulation, without
 disrupting the actual simulation.&lt;/p&gt;
 &lt;p&gt;Pip-Pip !&lt;/p&gt;

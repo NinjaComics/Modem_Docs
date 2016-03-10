@@ -1,7 +1,7 @@
 Custom tracesource to get CQI info in ns-3 apps
 ###############################################
 
-:date: 2016-07-01 11:34
+:date: 2016-03-10 13:37
 :tags: ns3, Tracing
 :category: /bin
 :author: Ravi Sharan
@@ -30,7 +30,9 @@ tree:
 
 In ``lte-enb-phy.cc``:
 
-Adding a tracesource
+Adding a TraceSource
+
+
 .. code-block:: C++
 
    .AddTraceSource ("ReportCqiValues",
@@ -40,12 +42,16 @@ Adding a tracesource
 
 In ``lte-enb-phy.h``:
 
-TracedCallback declaration
+Adding a TracedCallback declaration
+
+
 .. code-block:: C++
    
    TracedCallback<uint16_t, uint16_t, std::vector <uint8_t> > m_reportCqiTrace;
 
+
 The typedef for the callback function signature
+
 
 .. code-block:: C++
 
@@ -67,18 +73,8 @@ Specifically, we are piping the information held in the ``CqiListElements_s`` st
 that is later passed onto the MAC and to the Scheduler layer for further decision making.
 
 The further process of connecting a tracesink to the source, in the application,
-is left to the reader.In essence, the tracing mechanism in ns-3 provides a neat
+is left to the reader. In essence, the tracing mechanism in ns-3 provides a neat
 solution to pipe the information that the stack uses during the simulation, without 
 disrupting the actual simulation.  
 
 Pip-Pip !
-
-
-
-
-
-
-
-
-
-
