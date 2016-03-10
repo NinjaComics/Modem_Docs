@@ -58,6 +58,7 @@ The typedef for the callback function signature
    typedef void (* ReportCqiTracedCallback)
        (uint16_t cellId, uint16_t rnti, std::vector <uint8_t>);
 
+
 What did we do in the previous section ?
 ========================================
 
@@ -71,6 +72,9 @@ appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
 catch the CQI values at the lowest level of the stack and route it to our application.
 Specifically, we are piping the information held in the ``CqiListElements_s`` struct
 that is later passed onto the MAC and to the Scheduler layer for further decision making.
+The ``CqiListElements_s`` struct by default contains only RNTI and 
+a vector of CQI values. We add the cellId argument to our TraceSource to differentiate
+between the eNBs, given there are many eNBs in the application.
 
 The further process of connecting a tracesink to the source, in the application,
 is left to the reader. In essence, the tracing mechanism in ns-3 provides a neat
