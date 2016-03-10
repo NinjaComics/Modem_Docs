@@ -91,7 +91,10 @@ mechanism to the tracesource we just created.</p>
 appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
 catch the CQI values at the lowest level of the stack and route it to our application.
 Specifically, we are piping the information held in the <tt class="docutils literal">CqiListElements_s</tt> struct
-that is later passed onto the MAC and to the Scheduler layer for further decision making.</p>
+that is later passed onto the MAC and to the Scheduler layer for further decision making.
+The <tt class="docutils literal">CqiListElements_s</tt> struct by default contains only RNTI and
+a vector of CQI values. We add the cellId argument to our TraceSource to differentiate
+between the eNBs, given there are many eNBs in the application.</p>
 <p>The further process of connecting a tracesink to the source, in the application,
 is left to the reader. In essence, the tracing mechanism in ns-3 provides a neat
 solution to pipe the information that the stack uses during the simulation, without
