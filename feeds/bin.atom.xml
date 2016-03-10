@@ -17,16 +17,12 @@ For now, let's get to the main part of this log.&lt;/p&gt;
 &lt;p&gt;Add the following piece(s) of code in the respective files in your ns-3 source
 tree:&lt;/p&gt;
 &lt;p&gt;In &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lte-enb-phy.cc&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
-&lt;p&gt;Adding a tracesource
-.. code-block:: C++&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;.AddTraceSource (&amp;quot;ReportCqiValues&amp;quot;,&lt;/dt&gt;
-&lt;dd&gt;&amp;quot;DL transmission PHY layer CQI statistics.&amp;quot;,
-MakeTraceSourceAccessor (&amp;amp;LteEnbPhy::m_reportCqiTrace),
-&amp;quot;ns3::LteEnbPhy::ReportCqiTracedCallback&amp;quot;)&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Adding a tracesource&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AddTraceSource&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ReportCqiValues&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                 &lt;span class="s"&gt;&amp;quot;DL transmission PHY layer CQI statistics.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                 &lt;span class="n"&gt;MakeTraceSourceAccessor&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;LteEnbPhy&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;m_reportCqiTrace&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+                 &lt;span class="s"&gt;&amp;quot;ns3::LteEnbPhy::ReportCqiTracedCallback&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;lte-enb-phy.h&lt;/span&gt;&lt;/tt&gt;:&lt;/p&gt;
 &lt;p&gt;TracedCallback declaration&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TracedCallback&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;uint16_t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;uint16_t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;vector&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="kt"&gt;uint8_t&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;m_reportCqiTrace&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;

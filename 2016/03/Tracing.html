@@ -58,16 +58,12 @@ For now, let's get to the main part of this log.</p>
 <p>Add the following piece(s) of code in the respective files in your ns-3 source
 tree:</p>
 <p>In <tt class="docutils literal"><span class="pre">lte-enb-phy.cc</span></tt>:</p>
-<p>Adding a tracesource
-.. code-block:: C++</p>
-<blockquote>
-<dl class="docutils">
-<dt>.AddTraceSource (&quot;ReportCqiValues&quot;,</dt>
-<dd>&quot;DL transmission PHY layer CQI statistics.&quot;,
-MakeTraceSourceAccessor (&amp;LteEnbPhy::m_reportCqiTrace),
-&quot;ns3::LteEnbPhy::ReportCqiTracedCallback&quot;)</dd>
-</dl>
-</blockquote>
+<p>Adding a tracesource</p>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="n">AddTraceSource</span> <span class="p">(</span><span class="s">&quot;ReportCqiValues&quot;</span><span class="p">,</span>
+                 <span class="s">&quot;DL transmission PHY layer CQI statistics.&quot;</span><span class="p">,</span>
+                 <span class="n">MakeTraceSourceAccessor</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">LteEnbPhy</span><span class="o">::</span><span class="n">m_reportCqiTrace</span><span class="p">),</span>
+                 <span class="s">&quot;ns3::LteEnbPhy::ReportCqiTracedCallback&quot;</span><span class="p">)</span>
+</pre></div>
 <p>In <tt class="docutils literal"><span class="pre">lte-enb-phy.h</span></tt>:</p>
 <p>TracedCallback declaration</p>
 <div class="highlight"><pre><span></span><span class="n">TracedCallback</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="p">,</span> <span class="kt">uint16_t</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">m_reportCqiTrace</span><span class="p">;</span>
