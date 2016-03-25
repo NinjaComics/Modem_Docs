@@ -69,9 +69,9 @@ mechanism to the tracesource we just created.
 The CQI values from each UE, packed in the form of control messages 
 appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
 catch the CQI values at the lowest level of the stack and route it to our application.
-Specifically, we are piping the information held in the ``CqiListElements_s`` struct
+Specifically, we are piping the information held in the `CqiListElements_s`_ struct
 that is later passed onto the MAC and to the Scheduler layer for further decision making.
-The ``CqiListElements_s`` struct by default contains RNTI and a vector of CQI values,
+The `CqiListElements_s`_ struct by default contains RNTI and a vector of CQI values,
 along with the other elements like CQI type (periodic or otherwise) etc., 
 We add the cellId argument to our tracesource to differentiate between the eNBs, 
 given there are many eNBs in the application.
@@ -82,3 +82,5 @@ solution to pipe the information that the stack uses during the simulation, with
 disrupting the actual simulation.  
 
 Pip-Pip !
+
+.. _CqiListElements_s: https://www.nsnam.org/doxygen/structns3_1_1_cqi_list_element__s.html
