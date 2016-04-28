@@ -41,66 +41,30 @@
 
 
       <article>
-        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html">Custom tracing for CQI info in ns-3 apps</a></h1>
+        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/04/gsoc.html">Summer GSoC  GNU Radio</a></h1>
 	<div style="padding: 0px 0px 10px 0px;">
-	  <time datetime="2016-03-10T13:37:00" pubdate 
+	  <time datetime="2016-04-28T16:51:00" pubdate 
 		style="font-style: italic;
 		font-size: 14px; color: #757575;">
-		Thu 10 March 2016</time> 
+		Thu 28 April 2016</time> 
         </div>
-	<p>I am updating something on this blog exactly after a year - minus 19 days plus
-a leap day. In this post, I will walkthrough the steps required to add a tracesource
-to ns-3 applications to acquire the downlink Channel Quality Indicator (CQI)
-information sent by each UE attached to the respective eNB in the network.</p>
-<p>A bit about CQI in lte - the eNB receives information from the UE
-in the form of CQI (ranging from 0 to 15), according to the perceived downlink
-channel at the UE. The higher the CQI, the better the channel is. Thus, based on
-the CQI received from the UE, appropriate modulation &amp; coding scheme (MCS) is used
-to serve the UE better. The CQI reporting modes can either be periodic or aperiodic
-in time and wideband or subband in frequency, based on the eNB implementation.
-Further information on CQI reporting can be found elsewhere on the internet.
-For now, let's get to the main part of this log.</p>
-<div class="section" id="custom-tracesource-and-callback-for-cqi">
-<h2>Custom tracesource and Callback for CQI</h2>
-<p>Add the following piece(s) of code in the respective files in your ns-3 source
-tree:</p>
-<p>In <tt class="docutils literal"><span class="pre">lte-enb-phy.cc</span></tt>:</p>
-<p>Adding a TraceSource</p>
-<div class="highlight"><pre><span></span><span class="p">.</span><span class="n">AddTraceSource</span> <span class="p">(</span><span class="s">&quot;ReportCqiValues&quot;</span><span class="p">,</span>
-                 <span class="s">&quot;DL transmission PHY layer CQI statistics.&quot;</span><span class="p">,</span>
-                 <span class="n">MakeTraceSourceAccessor</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">LteEnbPhy</span><span class="o">::</span><span class="n">m_reportCqiTrace</span><span class="p">),</span>
-                 <span class="s">&quot;ns3::LteEnbPhy::ReportCqiTracedCallback&quot;</span><span class="p">)</span>
-</pre></div>
-<p>In <tt class="docutils literal"><span class="pre">lte-enb-phy.h</span></tt>:</p>
-<p>Adding a TracedCallback declaration</p>
-<div class="highlight"><pre><span></span><span class="n">TracedCallback</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="p">,</span> <span class="kt">uint16_t</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">m_reportCqiTrace</span><span class="p">;</span>
-</pre></div>
-<p>The typedef for the callback function signature</p>
-<div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span> <span class="n">ReportCqiTracedCallback</span><span class="p">)</span>
-    <span class="p">(</span><span class="kt">uint16_t</span> <span class="n">cellId</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">rnti</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="section" id="what-did-we-do-in-the-previous-section">
-<h2>What did we do in the previous section ?</h2>
-<p>In the above section, the <tt class="docutils literal">AddTraceSource</tt> provides hooks to the ns-3 application
-using the Config system, the <tt class="docutils literal">TracedCallback&lt; &gt;</tt> contains trace information about the
-CQI and the typedef void <tt class="docutils literal">(* ReportCqiTraceCallBack)</tt> provides a callback
-mechanism to the tracesource we just created.</p>
-<p>The CQI values from each UE, packed in the form of control messages
-appear at three levels in the ns-3's lte stack - PHY, MAC and the Scheduler. We
-catch the CQI values at the lowest level of the stack and route it to our application.
-Specifically, we are piping the information held in the <a class="reference external" href="https://www.nsnam.org/doxygen/structns3_1_1_cqi_list_element__s.html">CqiListElements_s</a> struct
-that is later passed onto the MAC and to the Scheduler layer for further decision making.
-The <a class="reference external" href="https://www.nsnam.org/doxygen/structns3_1_1_cqi_list_element__s.html">CqiListElements_s</a> struct by default contains RNTI and a vector of CQI values,
-along with the other elements like CQI type (periodic or otherwise) etc.,
-We add the cellId argument to our tracesource to differentiate between the eNBs,
-given there are many eNBs in the application.</p>
-<p>The further process of connecting a tracesink to the source, in the application,
-is left to the reader. In essence, the tracing mechanism in ns-3 provides a neat
-solution to pipe the information that the stack uses during the simulation, without
-disrupting the actual simulation.</p>
-<p>Pip-Pip !</p>
-</div>
+	<img alt="" class="align-center" src="http://ninjacomics.github.io/radioblogr/images/banner.png" style="width: 970px; height: 274px;" />
+<p>Happy news alert ! Got selected for this year's <a class="reference external" href="https://summerofcode.withgoogle.com/">Google Summer of Code (GSoC)</a>
+and will be contributing to GNU Radio as a part of it. Meaning, I will be
+updating the blog more often this summer - on a weekly basis to be precise.
+This is my second attempt at participating in GSoC, and I am glad to be part of
+it this year.</p>
+<p>During the GSoC period, I will be working on</p>
+<ul class="simple">
+<li>providing a GUI frontend for <a class="reference external" href="https://github.com/gnuradio/pybombs">Pybombs</a>,</li>
+<li>add Pybombs support to GNU Radio's embdedded working group and</li>
+<li>finally, improve <a class="reference external" href="http://cgran.org/">CGRAN</a>, and provide necessary documentation towards the end
+of the program.</li>
+</ul>
+<p>In a nutshell, my contributions during the program will be to improve the user
+experience aspects of the GNU Radio project. If you follow planet GNU Radio's
+progress, keep a watch on this space for more and more Pybombs and updates.</p>
+<p>For now, keeping the post short and simple. Pip-pip !</p>
 
       </article>
 
@@ -110,6 +74,13 @@ disrupting the actual simulation.</p>
           <h3>Previous Posts</h3>
           <ul class="archive">
     
+
+
+      <li>
+<a href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html" rel="bookmark" title="Permalink to Custom tracing for CQI info in ns-3 apps">Custom tracing for CQI info in ns-3 apps</a>
+<br>
+<time datetime="2016-03-10T13:37:00" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Thu 10 March 2016</time>
+      </li>
 
 
       <li>
