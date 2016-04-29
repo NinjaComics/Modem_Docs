@@ -22,4 +22,6 @@ ARTICLE_SAVE_AS ='{date:%Y}/{date:%m}/{slug}.html'
 FEED_DOMAIN = 'http://feeds.feedburner.com'
 FEED_ALL_ATOM = 'radioblogrfeeds'
 
+#STATIC Path settings
 
+STATIC_PATHS = ['images', 'pdfs']

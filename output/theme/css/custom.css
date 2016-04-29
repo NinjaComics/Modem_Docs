@@ -41,3 +41,8 @@ pre {
   border: 0px;
   border-radius: 0px;
 }
+
+img {
+  display: block;
+  margin: auto;
+}

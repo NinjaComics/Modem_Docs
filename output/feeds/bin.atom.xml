@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/bin.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-03-10T13:37:00+05:30</updated><entry><title>Custom tracing for CQI info in ns-3 apps</title><link href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html" rel="alternate"></link><updated>2016-03-10T13:37:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2016-03-10:2016/03/Tracing.html</id><summary type="html">&lt;p&gt;I am updating something on this blog exactly after a year - minus 19 days plus
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/bin.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-04-28T16:51:00+05:30</updated><entry><title>Summer -&gt; GSoC.GNU Radio</title><link href="http://ninjacomics.github.io/radioblogr/2016/04/gsoc.html" rel="alternate"></link><updated>2016-04-28T16:51:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2016-04-28:2016/04/gsoc.html</id><summary type="html">&lt;p&gt;Happy news alert ! Got selected for this year's &lt;a class="reference external" href="https://summerofcode.withgoogle.com/"&gt;Google Summer of Code (GSoC)&lt;/a&gt;
+and will be contributing to GNU Radio as a part of it. Meaning, I will be
+updating the blog more often this summer - on a weekly basis to be precise.
+This is my second attempt at participating in GSoC, and I am glad to be part of
+it this year.&lt;/p&gt;
+&lt;p&gt;During the GSoC period, I will be working on&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;providing a GUI frontend for &lt;a class="reference external" href="https://github.com/gnuradio/pybombs"&gt;Pybombs&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;add Pybombs support to GNU Radio's embdedded working group and&lt;/li&gt;
+&lt;li&gt;finally, improve &lt;a class="reference external" href="http://cgran.org/"&gt;CGRAN&lt;/a&gt;, and provide necessary documentation towards the end
+of the program.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In a nutshell, my contributions during the program will be to improve the user
+experience aspects of the GNU Radio project. If you follow planet GNU Radio's
+progress, watch out for some updates on Pybombs and CGRAN soon.&lt;/p&gt;
+&lt;p&gt;For now, keeping the post short and simple. Pip-pip !&lt;/p&gt;
+</summary><category term="gsoc"></category></entry><entry><title>Custom tracing for CQI info in ns-3 apps</title><link href="http://ninjacomics.github.io/radioblogr/2016/03/Tracing.html" rel="alternate"></link><updated>2016-03-10T13:37:00+05:30</updated><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io/radioblogr,2016-03-10:2016/03/Tracing.html</id><summary type="html">&lt;p&gt;I am updating something on this blog exactly after a year - minus 19 days plus
 a leap day. In this post, I will walkthrough the steps required to add a tracesource
 to ns-3 applications to acquire the downlink Channel Quality Indicator (CQI)
 information sent by each UE attached to the respective eNB in the network.&lt;/p&gt;
