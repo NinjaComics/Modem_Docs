@@ -41,36 +41,40 @@
 
 
       <article>
-        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_cb.html">[GSoC] Community Bonding Period</a></h1>
+        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html">[GSoC] Week One - Pybombs Frontend &amp; Design Idea</a></h1>
 	<div style="padding: 0px 0px 10px 0px;">
-	  <time datetime="2016-05-22T11:39:00+05:30" pubdate 
+	  <time datetime="2016-05-29T14:45:00+05:30" pubdate 
 		style="font-style: italic;
 		font-size: 14px; color: #757575;">
-		Sun 22 May 2016</time> 
+		Sun 29 May 2016</time> 
         </div>
-	<p>The <a class="reference external" href="https://summerofcode.withgoogle.com/">GSoC</a> community bonding period comes to an end in few hours from now and
-I am all excited and a tad bit nervous that the actual coding period starts
-from tomorrow. One good thing about the coding period is I don't have to carry
-the burden of my semester work parallelly while I am contributing to Pybombs this
-summer. Phew ! I am finally done with this semester's work.</p>
-<p>Coming back to the community bonding period, I haven't really pushed any code
-or pulled any requests to the <a class="reference external" href="https://github.com/gnuradio/pybombs">Pybombs</a> repo during the pseudo coding period
-a.k.a community bonding period, but I now have a fairly decent idea on how
-Pybombs is shaping up and what areas I must be looking at during this summer,
-thanks to all the conversations that happened over the last one month on Pybombs'
-bug tracker.</p>
-<p>Of all the issues raised on the Pybombs' bug tracker, issue <a class="reference external" href="https://github.com/gnuradio/pybombs/issues/314">#304</a> and <a class="reference external" href="https://github.com/gnuradio/pybombs/issues/312">#312</a>
-are of particular interest to me. The first one decides the way pybombs should
-run while the second issue (although fixed and merged) is a step towards making
-Pybombs build against Python3. Although, I was not successful at running pybombs
-normally on a virtual environment supporting Python3, I will test it on a
-machine which has Python3 as default, before jumping onto developing the
-graphical frontend for pybombs.</p>
-<p>Apart from looking at the Pybombs' code base, I have spent some time on figuring
-out the PyQt5 and it's availability on platforms other than Ubuntu. Now only
-thing that's left is the actual coding period that starts from tomorrow. Like
-always, watch out for more updates on Pybombs in the coming weeks. For now,
-Pip pip !</p>
+	<p>One week into <a class="reference external" href="https://summerofcode.withgoogle.com/">GSoC</a> coding period and I have been working on finalizing the
+GUI design for <a class="reference external" href="https://github.com/gnuradio/pybombs">Pybombs</a>. While I was writing the proposal for GSoC, I had in
+mind a design similar to the <a class="reference external" href="http://www.nongnu.org/synaptic/">Synaptic</a> package manager. Synaptic is one of
+the popular GUI front-ends for the apt tool and anyone coming from the Debian and
+Ubuntu world will more than agree to it.</p>
+<p>Another graphical package manager that picqued my interest is <a class="reference external" href="https://github.com/manjaro/pamac">Pamac</a>, a GTK3
+based GUI frontend for pacman(The package manager for Arch Linux) and ships with
+the Antergos distro. Both Pamac and Synaptic have a table view which lists out
+the packages available, followed by a brief description and other information
+like version number etc., in the subsequent columns.</p>
+<p>The Pybombs1 appstore had a grid view displaying the OOT Modules with an icon for
+each module. Although the UI looked simple, with the lack of proper branding of OOT
+Modules, only one thumbnail picture appeared for most of the OOT Modules. The reason
+behind choosing the tableview approach mentioned above is to keep the UI simple and
+clean, while providing a bit more information on the OOT Modules like the version
+number, repository URL, etc., that are available from the recipe files.</p>
+<div class="section" id="progress-and-update-for-next-week">
+<h2>Progress and Update for next Week</h2>
+<p>Currently, all the design and development is being done on Antergos distro and
+I am using PyQt5 as the GUI toolkit along with Qt Designer to design most of the UI.
+Although most of the design is complete, I am still working on polishing certain areas
+of the design. In the next week, I intend to bind the existsing pybombs API with the UI and
+come up with a minimalistic frontend for Pybombs. I will post my progress and design files
+on the mailing list during next week to get feedback on the design before proceeding with
+any changes to the original pybombs repo.</p>
+<p>Pip Pip !</p>
+</div>
 
       </article>
 
@@ -80,6 +84,13 @@ Pip pip !</p>
           <h3>Previous Posts</h3>
           <ul class="archive">
     
+
+
+      <li>
+<a href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_cb.html" rel="bookmark" title="Permalink to [GSoC] Community Bonding Period">[GSoC] Community Bonding Period</a>
+<br>
+<time datetime="2016-05-22T11:39:00+05:30" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Sun 22 May 2016</time>
+      </li>
 
 
       <li>
@@ -110,11 +121,6 @@ Pip pip !</p>
       </li>
 
 
-      <li>
-<a href="http://ninjacomics.github.io/radioblogr/2014/07/Testpost.html" rel="bookmark" title="Permalink to Testpost">Testpost</a>
-<br>
-<time datetime="2014-07-01T11:34:00+05:30" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Tue 01 July 2014</time>
-      </li>
 
 
           </ul>
