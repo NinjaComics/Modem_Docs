@@ -41,39 +41,36 @@
 
 
       <article>
-        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html">[GSoC] Week One - Pybombs Frontend &amp; Design Idea</a></h1>
+        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/06/gsoc_week2_3.html">[GSoC] Week Two &amp; Three - Experimental PyBOMBS GUI</a></h1>
 	<div style="padding: 0px 0px 10px 0px;">
-	  <time datetime="2016-05-29T14:45:00+05:30" pubdate 
+	  <time datetime="2016-06-12T09:51:00+05:30" pubdate 
 		style="font-style: italic;
 		font-size: 14px; color: #757575;">
-		Sun 29 May 2016</time> 
+		Sun 12 June 2016</time> 
         </div>
-	<p>One week into <a class="reference external" href="https://summerofcode.withgoogle.com/">GSoC</a> coding period and I have been working on finalizing the
-GUI design for <a class="reference external" href="https://github.com/gnuradio/pybombs">Pybombs</a>. While I was writing the proposal for GSoC, I had in
-mind a design similar to the <a class="reference external" href="http://www.nongnu.org/synaptic/">Synaptic</a> package manager. Synaptic is one of
-the popular GUI front-ends for the apt tool and anyone coming from the Debian and
-Ubuntu world will more than agree to it.</p>
-<p>Another graphical package manager that picqued my interest is <a class="reference external" href="https://github.com/manjaro/pamac">Pamac</a>, a GTK3
-based GUI frontend for pacman(The package manager for Arch Linux) and ships with
-the Antergos distro. Both Pamac and Synaptic have a table view which lists out
-the packages available, followed by a brief description and other information
-like version number etc., in the subsequent columns.</p>
-<p>The Pybombs1 appstore had a grid view displaying the OOT Modules with an icon for
-each module. Although the UI looked simple, with the lack of proper branding of OOT
-Modules, only one thumbnail picture appeared for most of the OOT Modules. The reason
-behind choosing the tableview approach mentioned above is to keep the UI simple and
-clean, while providing a bit more information on the OOT Modules like the version
-number, repository URL, etc., that are available from the recipe files.</p>
-<div class="section" id="progress-and-update-for-next-week">
-<h2>Progress and Update for next Week</h2>
-<p>Currently, all the design and development is being done on Antergos distro and
-I am using PyQt5 as the GUI toolkit along with Qt Designer to design most of the UI.
-Although most of the design is complete, I am still working on polishing certain areas
-of the design. In the next week, I intend to bind the existsing pybombs API with the UI and
-come up with a minimalistic frontend for Pybombs. I will post my progress and design files
-on the mailing list during next week to get feedback on the design before proceeding with
-any changes to the original pybombs repo.</p>
-<p>Pip Pip !</p>
+	<p>In my last <a class="reference external" href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html">update</a> , I had discussed the motivation behind designing the
+GUI frontend for the new <a class="reference external" href="https://github.com/gnuradio/pybombs">Pybombs</a>. In this week's update, I present an almost
+finished GUI for the pybombs (it still lacks an interface to the Pybombs API).
+The gui features a wizard, where it prompts for the user to fill in/choose the
+prefix and the contents in the main window are displayed according to the chosen
+prefix. The OOT Modules are listed out in the main window along with some more
+information like the category, a one line description of the package and the
+remote repository. There's a Module info dialog from which one can query the module
+information and it's dependencies. Like I mentioned in my previous update, I have
+borrowed the design idea from <a class="reference external" href="http://www.nongnu.org/synaptic/">Synaptic</a> and <a class="reference external" href="https://github.com/manjaro/pamac">Pamac</a> package managers, with some
+addition of graphics to make it look a bit more orangy.</p>
+<div class="section" id="what-s-left">
+<h2>What's left ?</h2>
+<p>By mid-term evaluatation period, I am looking forward to completely interface the
+GUI with the Pybombs API and polish the graphics a bit more. Also, during the
+interaction sessions with my mentor, Martin Braun, we have decided to make
+the GUI frontend installable from within pybombs, which will look something like:</p>
+<pre class="literal-block">
+pybombs install &lt;pybombs-gui-frontend&gt;
+</pre>
+<p>That makes it a small update for this week and here's a small <a class="reference external" href="https://www.youtube.com/watch?v=VVN534cHtm4">screencast</a> I have made,
+on how the GUI will look like.</p>
+<p>Pip-pip !</p>
 </div>
 
       </article>
@@ -84,6 +81,13 @@ any changes to the original pybombs repo.</p>
           <h3>Previous Posts</h3>
           <ul class="archive">
     
+
+
+      <li>
+<a href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html" rel="bookmark" title="Permalink to [GSoC] Week One - Pybombs Frontend & Design Idea">[GSoC] Week One - Pybombs Frontend &amp; Design Idea</a>
+<br>
+<time datetime="2016-05-29T14:45:00+05:30" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Sun 29 May 2016</time>
+      </li>
 
 
       <li>
@@ -114,11 +118,6 @@ any changes to the original pybombs repo.</p>
       </li>
 
 
-      <li>
-<a href="http://ninjacomics.github.io/radioblogr/2014/09/Start the stack with right 3GPP specifications.html" rel="bookmark" title="Permalink to Start the stack with right 3GPP specifications">Start the stack with right 3GPP specifications</a>
-<br>
-<time datetime="2014-09-02T18:09:00+05:30" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Tue 02 September 2014</time>
-      </li>
 
 
 
