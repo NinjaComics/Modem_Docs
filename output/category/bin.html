@@ -41,36 +41,37 @@
 
 
       <article>
-        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_cb.html">[GSoC] Community Bonding Period</a></h1>
+        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/06/gsoc_week2_3.html">[GSoC] Week Two &amp; Three - Experimental PyBOMBS GUI</a></h1>
 	<div style="padding: 0px 0px 10px 0px;">
-	  <time datetime="2016-05-22T11:39:00+05:30" pubdate 
+	  <time datetime="2016-06-12T09:51:00+05:30" pubdate 
 		style="font-style: italic;
 		font-size: 14px; color: #757575;">
-		Sun 22 May 2016</time> 
+		Sun 12 June 2016</time> 
         </div>
-	<p>The <a class="reference external" href="https://summerofcode.withgoogle.com/">GSoC</a> community bonding period comes to an end in few hours from now and
-I am all excited and a tad bit nervous that the actual coding period starts
-from tomorrow. One good thing about the coding period is I don't have to carry
-the burden of my semester work parallelly while I am contributing to Pybombs this
-summer. Phew ! I am finally done with this semester's work.</p>
-<p>Coming back to the community bonding period, I haven't really pushed any code
-or pulled any requests to the <a class="reference external" href="https://github.com/gnuradio/pybombs">Pybombs</a> repo during the pseudo coding period
-a.k.a community bonding period, but I now have a fairly decent idea on how
-Pybombs is shaping up and what areas I must be looking at during this summer,
-thanks to all the conversations that happened over the last one month on Pybombs'
-bug tracker.</p>
-<p>Of all the issues raised on the Pybombs' bug tracker, issue <a class="reference external" href="https://github.com/gnuradio/pybombs/issues/314">#304</a> and <a class="reference external" href="https://github.com/gnuradio/pybombs/issues/312">#312</a>
-are of particular interest to me. The first one decides the way pybombs should
-run while the second issue (although fixed and merged) is a step towards making
-Pybombs build against Python3. Although, I was not successful at running pybombs
-normally on a virtual environment supporting Python3, I will test it on a
-machine which has Python3 as default, before jumping onto developing the
-graphical frontend for pybombs.</p>
-<p>Apart from looking at the Pybombs' code base, I have spent some time on figuring
-out the PyQt5 and it's availability on platforms other than Ubuntu. Now only
-thing that's left is the actual coding period that starts from tomorrow. Like
-always, watch out for more updates on Pybombs in the coming weeks. For now,
-Pip pip !</p>
+	<p>In my last <a class="reference external" href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html">update</a> , I had discussed the motivation behind designing the
+GUI frontend for the new <a class="reference external" href="https://github.com/gnuradio/pybombs">Pybombs</a>. In this week's update, I present an almost
+finished GUI for the pybombs (it still lacks an interface to the Pybombs API).
+The gui features a wizard, where it prompts for the user to fill in/choose the
+prefix and the contents in the main window are displayed according to the chosen
+prefix. The OOT Modules are listed out in the main window along with some more
+information like the category, a one line description of the package and the
+remote repository. There's a Module info dialog from which one can query the module
+information and it's dependencies. Like I mentioned in my previous update, I have
+borrowed the design idea from <a class="reference external" href="http://www.nongnu.org/synaptic/">Synaptic</a> and <a class="reference external" href="https://github.com/manjaro/pamac">Pamac</a> package managers, with some
+addition of graphics to make it look a bit more orangy.</p>
+<div class="section" id="what-s-left">
+<h2>What's left ?</h2>
+<p>By mid-term evaluatation period, I am looking forward to completely interface the
+GUI with the Pybombs API and polish the graphics a bit more. Also, during the
+interaction sessions with my mentor, Martin Braun, we have decided to make
+the GUI frontend installable from within pybombs, which will look something like:</p>
+<pre class="literal-block">
+pybombs install &lt;pybombs-gui-frontend&gt;
+</pre>
+<p>That makes it a small update for this week and here's a small <a class="reference external" href="https://www.youtube.com/watch?v=VVN534cHtm4">screencast</a> I have made,
+on how the GUI will look like.</p>
+<p>Pip-pip !</p>
+</div>
 
       </article>
 
@@ -80,6 +81,20 @@ Pip pip !</p>
           <h3>Previous Posts</h3>
           <ul class="archive">
     
+
+
+      <li>
+<a href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html" rel="bookmark" title="Permalink to [GSoC] Week One - Pybombs Frontend & Design Idea">[GSoC] Week One - Pybombs Frontend &amp; Design Idea</a>
+<br>
+<time datetime="2016-05-29T14:45:00+05:30" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Sun 29 May 2016</time>
+      </li>
+
+
+      <li>
+<a href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_cb.html" rel="bookmark" title="Permalink to [GSoC] Community Bonding Period">[GSoC] Community Bonding Period</a>
+<br>
+<time datetime="2016-05-22T11:39:00+05:30" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Sun 22 May 2016</time>
+      </li>
 
 
       <li>
