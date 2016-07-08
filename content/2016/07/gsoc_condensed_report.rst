@@ -90,7 +90,8 @@ currently working on to finish this deliverable:
 Apart from working on the GUI, I am alos working on fixing the pybomb's backend a bit.
 Finally the repository is hosted at `gitlab`_ as mentioned in my previous update.
 Also, I am recording some `screencasts`_ to mark the progress (explaining GUI is
-tough.Duh). For now, Pip-pip !
+tough.Duh). Also, I will be updating the progress on blog every Friday, hereafter.
+For now, Pip-pip !
 
 .. _pybombs-cli: https://github.com/gnuradio/pybombs
 .. _screencasts: https://www.youtube.com/watch?v=tN0KIX0YE4w
