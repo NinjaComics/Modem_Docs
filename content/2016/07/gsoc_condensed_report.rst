@@ -1,7 +1,7 @@
-[GSoC] Pybombs GUI - Few final touches left
-##################################################
+[GSoC] Pybombs GUI - Condensed progress for past four weeks
+###########################################################
 
-:date: 2016-07-12 18:51
+:date: 2016-07-08 18:51
 :tags: gsoc, weekly progress, coding period
 :category: /bin
 :author: Ravi Sharan
@@ -94,3 +94,4 @@ tough.Duh). For now, Pip-pip !
 
 .. _pybombs-cli: https://github.com/gnuradio/pybombs
 .. _screencasts: https://www.youtube.com/watch?v=tN0KIX0YE4w
+.. _gitlab: https://www.gitlab.com/NinjaComics/pybombs-qtgui

@@ -41,36 +41,87 @@
 
 
       <article>
-        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/06/gsoc_week2_3.html">[GSoC] Week Two &amp; Three - Experimental PyBOMBS GUI</a></h1>
+        <h1><a href="http://ninjacomics.github.io/radioblogr/2016/07/gsoc_condensed_report.html">[GSoC] Pybombs GUI - Condensed progress for past four weeks</a></h1>
 	<div style="padding: 0px 0px 10px 0px;">
-	  <time datetime="2016-06-12T09:51:00+05:30" pubdate 
+	  <time datetime="2016-07-08T18:51:00+05:30" pubdate 
 		style="font-style: italic;
 		font-size: 14px; color: #757575;">
-		Sun 12 June 2016</time> 
+		Fri 08 July 2016</time> 
         </div>
-	<p>In my last <a class="reference external" href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html">update</a> , I had discussed the motivation behind designing the
-GUI frontend for the new <a class="reference external" href="https://github.com/gnuradio/pybombs">Pybombs</a>. In this week's update, I present an almost
-finished GUI for the pybombs (it still lacks an interface to the Pybombs API).
-The gui features a wizard, where it prompts for the user to fill in/choose the
-prefix and the contents in the main window are displayed according to the chosen
-prefix. The OOT Modules are listed out in the main window along with some more
-information like the category, a one line description of the package and the
-remote repository. There's a Module info dialog from which one can query the module
-information and it's dependencies. Like I mentioned in my previous update, I have
-borrowed the design idea from <a class="reference external" href="http://www.nongnu.org/synaptic/">Synaptic</a> and <a class="reference external" href="https://github.com/manjaro/pamac">Pamac</a> package managers, with some
-addition of graphics to make it look a bit more orangy.</p>
+	<p>I am updating this blog almost after a month. This is a condensed report on my
+GSoC progress so far. The progress has been really slow but on the brighter side,
+I have made a good amount of changes to the design.</p>
+<p>The gui displays the application, baseline and prefix specific/sdk packages
+in two separate pages. Apart from displaying the list of packages, there is a
+recipe manager and a prefix manager to handle the prefixes and recipes in a proper
+way. Read along for more information on the design.</p>
+<div class="section" id="prefix-manager">
+<h2>Prefix Manager:</h2>
+<p>Prefix management in the pybombs-gui is split into two parts. One is the prefix
+config dialog and the other is a prefix chooser. The prefix config dialog works
+like the <code>pybombs prefix init</code> command. Bonus, you can even add a virtualenv
+to the prefix by just ticking a checkbox, while creating it - just like
+<a class="reference external" href="https://github.com/gnuradio/pybombs">pybombs-cli</a>.</p>
+<p>The prefix chooser does what it says - choose a prefix from the list of available
+prefixes and load the respective recipes. The idea here is to present the
+user with those packages that are specific to the prefix, rather than displaying
+recipes from all the recipe repositories. Currently, the tableview is posing a bit
+of a problem by not refreshing the content after choosing a prefix. Fixing this is
+the top priority now.</p>
+</div>
+<div class="section" id="recipe-manager">
+<h2>Recipe Manager:</h2>
+<p>The recipe manager dialog displays a list of recipe aliases, the source and the
+directory in which those recipes reside. By default, pybombs ships with basic
+recipes required to run it in a minimal mode. One can add the other recipes
+similar to the <code>pybombs recipes add &lt;recipe-alias&gt; &lt;recipe-repo uri&gt;</code> command.
+Again, functionality is similar to what you see with the pybombs-cli.</p>
+<p>When pybombs-gui is launched, it checks for the existing prefixes and if it
+doesn't find any suitable prefix or recipes to load, the prefix config dialog
+followed by a recipe manager dialog are presented to the user and the main window
+is displayed only when the user has created a prefix and added the recipes. If
+the default prefix is present, the main window loads those recipes specific to
+that prefix.</p>
+</div>
+<div class="section" id="main-window">
+<h2>Main Window:</h2>
+<p>The main window displays the prefix specific recipes, baseline packages and the
+sdk packages (if any) separately as stated above. A package can be selected by
+right clicking the row it is present and based on the package's status(install/
+update/remove), a context menu is provided to the user to choose from. Apart
+from the status of the package, the module info also can be viewed on a per
+package basis. One thing that I am not really sure about adding to this context menu
+is the package flags - forcebuild from source and forcedinstall flags. Just a small
+addition - Can be done !
+Once the user is happy with the selected packages, applying changes will automatically
+take care of installing, updating and removing the packages in a sequential manner
+(can turn out to be a time consuming process).</p>
+<p>Apart from the abovementioned dialogs, there is a running config dialog which displays
+the current local and global config. And there's also a new recipe dialog which helps
+to create a recipe from within pybombs.</p>
+</div>
 <div class="section" id="what-s-left">
 <h2>What's left ?</h2>
-<p>By mid-term evaluatation period, I am looking forward to completely interface the
-GUI with the Pybombs API and polish the graphics a bit more. Also, during the
-interaction sessions with my mentor, Martin Braun, we have decided to make
-the GUI frontend installable from within pybombs, which will look something like:</p>
-<pre class="literal-block">
-pybombs install &lt;pybombs-gui-frontend&gt;
-</pre>
-<p>That makes it a small update for this week and here's a small <a class="reference external" href="https://www.youtube.com/watch?v=VVN534cHtm4">screencast</a> I have made,
-on how the GUI will look like.</p>
-<p>Pip-pip !</p>
+<p>There are serious to less serious issues I am currently dealing with and hoping
+to complete the deliverable as soon as possible. Here are a list of problems I am
+currently working on to finish this deliverable:</p>
+<ul class="simple">
+<li>The app throws a lot of stdout, stderr and other pybombs' specific log messages.
+One solution can be to redirect this output to a textedit for better logs.</li>
+<li>Use an intelligent way to cater the elevated privileges issue. Solution is to
+use polkit to present the authentication system whenever pybombs' gui requires
+elevated privileges. I am still learning on how to use it and a help in any form
+in this direction is much welcome (Actually I will be more happy to have someone
+help me fixing this).</li>
+<li>Refresh the table content once the changes are applied to the packages. Currently,
+the app doesn't refresh the table content in the main window until and unless it
+gets the focus back or sometimes restart. Serious issue, but can be fixed with little
+effort.</li>
+</ul>
+<p>Apart from working on the GUI, I am alos working on fixing the pybomb's backend a bit.
+Finally the repository is hosted at <a class="reference external" href="https://www.gitlab.com/NinjaComics/pybombs-qtgui">gitlab</a> as mentioned in my previous update.
+Also, I am recording some <a class="reference external" href="https://www.youtube.com/watch?v=tN0KIX0YE4w">screencasts</a> to mark the progress (explaining GUI is
+tough.Duh). For now, Pip-pip !</p>
 </div>
 
       </article>
@@ -81,6 +132,13 @@ on how the GUI will look like.</p>
           <h3>Previous Posts</h3>
           <ul class="archive">
     
+
+
+      <li>
+<a href="http://ninjacomics.github.io/radioblogr/2016/06/gsoc_week2_3.html" rel="bookmark" title="Permalink to [GSoC] Week Two & Three - Experimental PyBOMBS GUI">[GSoC] Week Two &amp; Three - Experimental PyBOMBS GUI</a>
+<br>
+<time datetime="2016-06-12T09:51:00+05:30" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Sun 12 June 2016</time>
+      </li>
 
 
       <li>
@@ -111,11 +169,6 @@ on how the GUI will look like.</p>
       </li>
 
 
-      <li>
-<a href="http://ninjacomics.github.io/radioblogr/2015/03/gr-cgran.html" rel="bookmark" title="Permalink to CGRAN - A new look">CGRAN - A new look</a>
-<br>
-<time datetime="2015-03-29T20:17:00+05:30" pubdate style="color: #757575; font-style: italic; font-size: 14px;">Sun 29 March 2015</time>
-      </li>
 
 
 
