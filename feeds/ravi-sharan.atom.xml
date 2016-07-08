@@ -72,7 +72,8 @@ effort.&lt;/li&gt;
 &lt;p&gt;Apart from working on the GUI, I am alos working on fixing the pybomb's backend a bit.
 Finally the repository is hosted at &lt;a class="reference external" href="https://www.gitlab.com/NinjaComics/pybombs-qtgui"&gt;gitlab&lt;/a&gt; as mentioned in my previous update.
 Also, I am recording some &lt;a class="reference external" href="https://www.youtube.com/watch?v=tN0KIX0YE4w"&gt;screencasts&lt;/a&gt; to mark the progress (explaining GUI is
-tough.Duh). For now, Pip-pip !&lt;/p&gt;
+tough.Duh). Also, I will be updating the progress on blog every Friday, hereafter.
+For now, Pip-pip !&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="gsoc"></category><category term="weekly progress"></category><category term="coding period"></category></entry><entry><title>[GSoC] Week Two &amp; Three - Experimental PyBOMBS GUI</title><link href="http://ninjacomics.github.io/radioblogr/2016/06/gsoc_week2_3.html" rel="alternate"></link><published>2016-06-12T09:51:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-06-12:radioblogr/2016/06/gsoc_week2_3.html</id><summary type="html">&lt;p&gt;In my last &lt;a class="reference external" href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html"&gt;update&lt;/a&gt; , I had discussed the motivation behind designing the
 GUI frontend for the new &lt;a class="reference external" href="https://github.com/gnuradio/pybombs"&gt;Pybombs&lt;/a&gt;. In this week's update, I present an almost
