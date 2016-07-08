@@ -1,5 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/ravi-sharan.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-06-12T09:51:00+05:30</updated><entry><title>[GSoC] Week Two &amp; Three - Experimental PyBOMBS GUI</title><link href="http://ninjacomics.github.io/radioblogr/2016/06/gsoc_week2_3.html" rel="alternate"></link><published>2016-06-12T09:51:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-06-12:radioblogr/2016/06/gsoc_week2_3.html</id><summary type="html">&lt;p&gt;In my last &lt;a class="reference external" href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html"&gt;update&lt;/a&gt; , I had discussed the motivation behind designing the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/ravi-sharan.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-07-12T18:51:00+05:30</updated><entry><title>[GSoC] Pybombs GUI - Condensed progress for past four weeks</title><link href="http://ninjacomics.github.io/radioblogr/2016/07/gsoc_condensed_report.html" rel="alternate"></link><published>2016-07-12T18:51:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-07-12:radioblogr/2016/07/gsoc_condensed_report.html</id><summary type="html">&lt;p&gt;I am updating this blog almost after a month. This is a condensed report on my
+GSoC progress so far. The progress has been really slow but on the brighter side,
+I have made a good amount of changes to the design.&lt;/p&gt;
+&lt;p&gt;The gui displays the application, baseline and prefix specific/sdk packages
+in two separate pages. Apart from displaying the list of packages, there is a
+recipe manager and a prefix manager to handle the prefixes and recipes in a proper
+way. Read along for more information on the design.&lt;/p&gt;
+&lt;div class="section" id="prefix-manager"&gt;
+&lt;h2&gt;Prefix Manager:&lt;/h2&gt;
+&lt;p&gt;Prefix management in the pybombs-gui is split into two parts. One is the prefix
+config dialog and the other is a prefix chooser. The prefix config dialog works
+like the &lt;code&gt;pybombs prefix init&lt;/code&gt; command. Bonus, you can even add a virtualenv
+to the prefix by just ticking a checkbox, while creating it - just like
+&lt;a class="reference external" href="https://github.com/gnuradio/pybombs"&gt;pybombs-cli&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The prefix chooser does what it says - choose a prefix from the list of available
+prefixes and load the respective recipes. The idea here is to present the
+user with those packages that are specific to the prefix, rather than displaying
+recipes from all the recipe repositories. Currently, the tableview is posing a bit
+of a problem by not refreshing the content after choosing a prefix. Fixing this is
+the top priority now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="recipe-manager"&gt;
+&lt;h2&gt;Recipe Manager:&lt;/h2&gt;
+&lt;p&gt;The recipe manager dialog displays a list of recipe aliases, the source and the
+directory in which those recipes reside. By default, pybombs ships with basic
+recipes required to run it in a minimal mode. One can add the other recipes
+similar to the &lt;code&gt;pybombs recipes add &amp;lt;recipe-alias&amp;gt; &amp;lt;recipe-repo uri&amp;gt;&lt;/code&gt; command.
+Again, functionality is similar to what you see with the pybombs-cli.&lt;/p&gt;
+&lt;p&gt;When pybombs-gui is launched, it checks for the existing prefixes and if it
+doesn't find any suitable prefix or recipes to load, the prefix config dialog
+followed by a recipe manager dialog are presented to the user and the main window
+is displayed only when the user has created a prefix and added the recipes. If
+the default prefix is present, the main window loads those recipes specific to
+that prefix.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="main-window"&gt;
+&lt;h2&gt;Main Window:&lt;/h2&gt;
+&lt;p&gt;The main window displays the prefix specific recipes, baseline packages and the
+sdk packages (if any) separately as stated above. A package can be selected by
+right clicking the row it is present and based on the package's status(install/
+update/remove), a context menu is provided to the user to choose from. Apart
+from the status of the package, the module info also can be viewed on a per
+package basis. One thing that I am not really sure about adding to this context menu
+is the package flags - forcebuild from source and forcedinstall flags. Just a small
+addition - Can be done !
+Once the user is happy with the selected packages, applying changes will automatically
+take care of installing, updating and removing the packages in a sequential manner
+(can turn out to be a time consuming process).&lt;/p&gt;
+&lt;p&gt;Apart from the abovementioned dialogs, there is a running config dialog which displays
+the current local and global config. And there's also a new recipe dialog which helps
+to create a recipe from within pybombs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="what-s-left"&gt;
+&lt;h2&gt;What's left ?&lt;/h2&gt;
+&lt;p&gt;There are serious to less serious issues I am currently dealing with and hoping
+to complete the deliverable as soon as possible. Here are a list of problems I am
+currently working on to finish this deliverable:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The app throws a lot of stdout, stderr and other pybombs' specific log messages.
+One solution can be to redirect this output to a textedit for better logs.&lt;/li&gt;
+&lt;li&gt;Use an intelligent way to cater the elevated privileges issue. Solution is to
+use polkit to present the authentication system whenever pybombs' gui requires
+elevated privileges. I am still learning on how to use it and a help in any form
+in this direction is much welcome (Actually I will be more happy to have someone
+help me fixing this).&lt;/li&gt;
+&lt;li&gt;Refresh the table content once the changes are applied to the packages. Currently,
+the app doesn't refresh the table content in the main window until and unless it
+gets the focus back or sometimes restart. Serious issue, but can be fixed with little
+effort.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Apart from working on the GUI, I am alos working on fixing the pybomb's backend a bit.
+Finally the repository is hosted at &lt;a class="reference external" href="https://www.gitlab.com/NinjaComics/pybombs-qtgui"&gt;gitlab&lt;/a&gt; as mentioned in my previous update.
+Also, I am recording some &lt;a class="reference external" href="https://www.youtube.com/watch?v=tN0KIX0YE4w"&gt;screencasts&lt;/a&gt; to mark the progress (explaining GUI is
+tough.Duh). For now, Pip-pip !&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="gsoc"></category><category term="weekly progress"></category><category term="coding period"></category></entry><entry><title>[GSoC] Week Two &amp; Three - Experimental PyBOMBS GUI</title><link href="http://ninjacomics.github.io/radioblogr/2016/06/gsoc_week2_3.html" rel="alternate"></link><published>2016-06-12T09:51:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-06-12:radioblogr/2016/06/gsoc_week2_3.html</id><summary type="html">&lt;p&gt;In my last &lt;a class="reference external" href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html"&gt;update&lt;/a&gt; , I had discussed the motivation behind designing the
 GUI frontend for the new &lt;a class="reference external" href="https://github.com/gnuradio/pybombs"&gt;Pybombs&lt;/a&gt;. In this week's update, I present an almost
 finished GUI for the pybombs (it still lacks an interface to the Pybombs API).
 The gui features a wizard, where it prompts for the user to fill in/choose the
