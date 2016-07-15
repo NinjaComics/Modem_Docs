@@ -40,7 +40,7 @@ the GUI looks all nice on Fedora 23 and 24. The app inherits the GTK style so we
 on Fedora. The progress can be tracked at &lt;a class="reference external" href="https://www.gitlab.com/NinjaComics/pybombs-qtgui"&gt;gitlab&lt;/a&gt; repo.
 Apart from working on pybombs-gui, I have also started working
 a bit on the CGRAN site, which happens to be my next deliverable. For now,
-Pip pip ! If you followed this post till here, enjoy this random &lt;cite&gt;xkcd comic strip&lt;/cite&gt; !&lt;/p&gt;
+Pip pip ! If you followed this post till here, enjoy this random &lt;a class="reference external" href="https://c.xkcd.com/random/comic/"&gt;xkcd comic strip&lt;/a&gt; !&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ravi Sharan</dc:creator><pubDate>Fri, 15 Jul 2016 20:50:00 +0530</pubDate><guid isPermaLink="false">tag:ninjacomics.github.io,2016-07-15:radioblogr/2016/07/gsoc_weekly_report.html</guid><category>gsoc</category><category>weekly progress</category><category>coding period</category></item><item><title>[GSoC] Pybombs GUI - Condensed progress for past four weeks</title><link>http://ninjacomics.github.io/radioblogr/2016/07/gsoc_condensed_report.html</link><description>&lt;p&gt;I am updating this blog almost after a month. This is a condensed report on my
 GSoC progress so far. The progress has been really slow but on the brighter side,

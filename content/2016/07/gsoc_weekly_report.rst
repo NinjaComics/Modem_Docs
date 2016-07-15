@@ -52,7 +52,7 @@ the GUI looks all nice on Fedora 23 and 24. The app inherits the GTK style so we
 on Fedora. The progress can be tracked at `gitlab`_ repo.
 Apart from working on pybombs-gui, I have also started working
 a bit on the CGRAN site, which happens to be my next deliverable. For now,
-Pip pip ! If you followed this post till here, enjoy this random `xkcd comic strip` !
+Pip pip ! If you followed this post till here, enjoy this random `xkcd comic strip`_ !
 
 
 .. _pybombs-cli: https://github.com/gnuradio/pybombs
