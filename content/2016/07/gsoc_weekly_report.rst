@@ -57,6 +57,6 @@ Pip pip ! If you followed this post till here, enjoy this random `xkcd comic str
 
 .. _pybombs-cli: https://github.com/gnuradio/pybombs
 .. _gitlab: https://www.gitlab.com/NinjaComics/pybombs-qtgui
-.. _random xkcd comic: https://c.xkcd.com/random/comic/
+.. _xkcd comic strip: https://c.xkcd.com/random/comic/
 .. _pkexec: https://www.freedesktop.org/software/polkit/docs/0.105/pkexec.1.html
 .. _issue: https://github.com/gnuradio/pybombs/issues/369
