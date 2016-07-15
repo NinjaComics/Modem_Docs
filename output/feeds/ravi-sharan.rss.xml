@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Ravi Sharan's /radio/bin/io</title><link>http://ninjacomics.github.io/radioblogr/</link><description></description><lastBuildDate>Fri, 08 Jul 2016 18:51:00 +0530</lastBuildDate><item><title>[GSoC] Pybombs GUI - Condensed progress for past four weeks</title><link>http://ninjacomics.github.io/radioblogr/2016/07/gsoc_condensed_report.html</link><description>&lt;p&gt;I am updating this blog almost after a month. This is a condensed report on my
+<rss version="2.0"><channel><title>Ravi Sharan's /radio/bin/io</title><link>http://ninjacomics.github.io/radioblogr/</link><description></description><lastBuildDate>Fri, 15 Jul 2016 20:50:00 +0530</lastBuildDate><item><title>[GSoC] Pybombs GUI - Weekly Update</title><link>http://ninjacomics.github.io/radioblogr/2016/07/gsoc_weekly_report.html</link><description>&lt;p&gt;This week I worked on refining the UI and getting things ready for the release.
+One more thing I have worked on this week is separating the GUI and the time
+consuming features that power up the GUI, like generating data and installing
+packages etc., using Qt framework's QThread functionality. The app now doesn't
+lose focus while installing/updating/removing packages or generating data or
+while adding recipes from a remote URL. Read along to know more bombs, pybombs !&lt;/p&gt;
+&lt;div class="section" id="to-sudo-or-to-pkexec"&gt;
+&lt;h2&gt;To SUDO or to pkexec:&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/gnuradio/pybombs"&gt;pybombs-cli&lt;/a&gt; uses sudo for authentication, like I mentioned in my previous week's
+update. The advantage of sudo or the sudo based GUI frontends is that one doesn't
+have to authenticate for a certain time period (that's 5 minutes to be precise).
+Disadvantage is that these sudo based GUI frontends may or may not be available on
+all distros and we might have to add another dependency just for granting elevated
+privileges.
+Another alternative is to use &lt;a class="reference external" href="https://www.freedesktop.org/software/polkit/docs/0.105/pkexec.1.html"&gt;pkexec&lt;/a&gt;, an authentication mechanism based on polkit.
+The good part about pkexec is, it is available on all distros by default and uses
+an authentication agent that is native to the distro - meaning no dependencies.
+But, like I mentioned in this &lt;a class="reference external" href="https://github.com/gnuradio/pybombs/issues/369"&gt;issue&lt;/a&gt;, depending on the policies available,
+and given the fact that pybombs packs different native package managers, one
+might have to authenticate for elevated privileges every time a different package
+manager requests for elevated privileges, while performing tasks with pybombs.
+This can be overcome by using policies for different package managers while using
+pybombs in GUI mode and using using sudo as the authentication agent while running
+pybombs in cli mode.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="collecting-and-displaying-logs"&gt;
+&lt;h2&gt;Collecting and displaying logs:&lt;/h2&gt;
+&lt;p&gt;Providing information on what went wrong(or right), while performing a task
+using GUI makes it more easy to use. The pybombs-cli uses python's logging module
+to display information on what's happening while pybombs is running. The idea is
+to route this information to the GUI while performing the install/update/remove
+tasks or while creating a prefix for example.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="release-and-moving-onto-next-deliverable"&gt;
+&lt;h2&gt;Release and Moving onto next deliverable:&lt;/h2&gt;
+&lt;p&gt;Finally, I am looking forward to release a usable GUI frontend for pybombs,
+by mid next week. I am testing the GUI on different distros and so far I like how
+the GUI looks all nice on Fedora 23 and 24. The app inherits the GTK style so well
+on Fedora. The progress can be tracked at &lt;a class="reference external" href="https://www.gitlab.com/NinjaComics/pybombs-qtgui"&gt;gitlab&lt;/a&gt; repo.
+Apart from working on pybombs-gui, I have also started working
+a bit on the CGRAN site, which happens to be my next deliverable. For now,
+Pip pip ! If you followed this post till here, enjoy this random &lt;cite&gt;xkcd comic strip&lt;/cite&gt; !&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ravi Sharan</dc:creator><pubDate>Fri, 15 Jul 2016 20:50:00 +0530</pubDate><guid isPermaLink="false">tag:ninjacomics.github.io,2016-07-15:radioblogr/2016/07/gsoc_weekly_report.html</guid><category>gsoc</category><category>weekly progress</category><category>coding period</category></item><item><title>[GSoC] Pybombs GUI - Condensed progress for past four weeks</title><link>http://ninjacomics.github.io/radioblogr/2016/07/gsoc_condensed_report.html</link><description>&lt;p&gt;I am updating this blog almost after a month. This is a condensed report on my
 GSoC progress so far. The progress has been really slow but on the brighter side,
 I have made a good amount of changes to the design.&lt;/p&gt;
 &lt;p&gt;The gui displays the application, baseline and prefix specific/sdk packages
@@ -72,7 +115,8 @@ effort.&lt;/li&gt;
 &lt;p&gt;Apart from working on the GUI, I am alos working on fixing the pybomb's backend a bit.
 Finally the repository is hosted at &lt;a class="reference external" href="https://www.gitlab.com/NinjaComics/pybombs-qtgui"&gt;gitlab&lt;/a&gt; as mentioned in my previous update.
 Also, I am recording some &lt;a class="reference external" href="https://www.youtube.com/watch?v=tN0KIX0YE4w"&gt;screencasts&lt;/a&gt; to mark the progress (explaining GUI is
-tough.Duh). For now, Pip-pip !&lt;/p&gt;
+tough.Duh). Also, I will be updating the progress on blog every Friday, hereafter.
+For now, Pip-pip !&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ravi Sharan</dc:creator><pubDate>Fri, 08 Jul 2016 18:51:00 +0530</pubDate><guid isPermaLink="false">tag:ninjacomics.github.io,2016-07-08:radioblogr/2016/07/gsoc_condensed_report.html</guid><category>gsoc</category><category>weekly progress</category><category>coding period</category></item><item><title>[GSoC] Week Two &amp; Three - Experimental PyBOMBS GUI</title><link>http://ninjacomics.github.io/radioblogr/2016/06/gsoc_week2_3.html</link><description>&lt;p&gt;In my last &lt;a class="reference external" href="http://ninjacomics.github.io/radioblogr/2016/05/gsoc_week_one.html"&gt;update&lt;/a&gt; , I had discussed the motivation behind designing the
 GUI frontend for the new &lt;a class="reference external" href="https://github.com/gnuradio/pybombs"&gt;Pybombs&lt;/a&gt;. In this week's update, I present an almost
