@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-07-22T20:50:00+05:30</updated><entry><title>[GSoC] Pybombs and more - Weekly Update</title><link href="http://ninjacomics.github.io/radioblogr/2016/07/gsoc_pybombs_progress.html" rel="alternate"></link><published>2016-07-22T20:50:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-07-22:radioblogr/2016/07/gsoc_pybombs_progress.html</id><summary type="html">&lt;p&gt;In the last week, I have worked on two things - main one being Pybombs GUI and
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-08-05T20:50:00+05:30</updated><entry><title>[GSoC] Weekly Update</title><link href="http://ninjacomics.github.io/radioblogr/2016/08/gsoc_cgran_progress.html" rel="alternate"></link><published>2016-08-05T20:50:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-08-05:radioblogr/2016/08/gsoc_cgran_progress.html</id><summary type="html">&lt;p&gt;This log is a condensed report about my GSoC progress for the past two weeks.
+Quick update is, pybombs-gui is now on PyPi as a pre-release package. On the
+other hand, I am working on the &amp;quot;Install from CGRAN&amp;quot;, which is a part of my
+proposal. Read along for more updates.&lt;/p&gt;
+&lt;div class="section" id="pybombs-on-pypi-and-cgran-fixes"&gt;
+&lt;h2&gt;Pybombs on PyPi and CGRAN Fixes&lt;/h2&gt;
+&lt;p&gt;As mentioned above, I have pushed the pybombs-gui package as a pre-release package
+on PyPi. I am looking forward to release the GUI at the end of my GSoC, along
+with few bug fixes to the Pybombs-cli. There are a few things left before I can
+push the code for a full release. The idea is to make pybombs-gui installable
+from pybombs-cli. The recipe takes care of the PyQt5 dependencies and the
+gui-package is installable using Pip. Also I am working on a new icon for the
+gui - expect for more orange flavor. Maybe ?&lt;/p&gt;
+&lt;p&gt;On the CGRAN part, I am working on an idea similar to AptUrl, to install/prompt
+for package installation, from the CGRAN website. If the site is accessed on a
+Linux distro with Gnome or KDE, the default terminal emulator is invoked and
+pybombs will try to install package from website in the default prefix. If pybombs
+is not installed, the user is displayed an &amp;quot;Unable to install message&amp;quot; (obviously).&lt;/p&gt;
+&lt;p&gt;GSoC is about to end in another 15-18 days time and I am planning to finish off
+the tasks as quickly as possible. Hopefully, by the end of the GSoC period, we
+will have a new pybombs-gui and new features for CGRAN website. That makes it
+a short update. For now, pip-pip !&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="gsoc"></category><category term="weekly progress"></category><category term="coding period"></category></entry><entry><title>[GSoC] Pybombs and more - Weekly Update</title><link href="http://ninjacomics.github.io/radioblogr/2016/07/gsoc_pybombs_progress.html" rel="alternate"></link><published>2016-07-22T20:50:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-07-22:radioblogr/2016/07/gsoc_pybombs_progress.html</id><summary type="html">&lt;p&gt;In the last week, I have worked on two things - main one being Pybombs GUI and
 a bit on addressing the pybombs' support for airgapped systems. Read along to know
 the updates on &lt;a class="reference external" href="https://www.gitlab.com/NinjaComics/pybombs-qtgui"&gt;pybombs-qtgui&lt;/a&gt; and the idea for this pybombs &lt;a class="reference external" href="https://github.com/gnuradio/pybombs/issues/236"&gt;issue&lt;/a&gt;&lt;/p&gt;
 &lt;div class="section" id="pybombs-final-touches"&gt;

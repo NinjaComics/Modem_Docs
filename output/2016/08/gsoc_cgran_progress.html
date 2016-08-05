@@ -37,16 +37,35 @@
   </div>
 </div>
 <div class="container" id="crunch">
-    <h1>Tags for Ravi Sharan's /radio/bin/io</h1>        <li><a href="http://ninjacomics.github.io/radioblogr/tag/3gpp-specs.html">3GPP Specs</a> (1)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/cgran.html">CGRAN</a> (1)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/coding-period.html">coding period</a> (6)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/community-bonding-period.html">community bonding period</a> (1)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/gnu-radio.html">GNU Radio</a> (1)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/gsoc.html">gsoc</a> (8)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/ns3.html">ns3</a> (1)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/testpost.html">Testpost</a> (1)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/tracing.html">Tracing</a> (1)</li>
-        <li><a href="http://ninjacomics.github.io/radioblogr/tag/weekly-progress.html">weekly progress</a> (6)</li>
+
+<article>
+  <h1>[GSoC] Weekly Update</h1>
+  <p>This log is a condensed report about my GSoC progress for the past two weeks.
+Quick update is, pybombs-gui is now on PyPi as a pre-release package. On the
+other hand, I am working on the &quot;Install from CGRAN&quot;, which is a part of my
+proposal. Read along for more updates.</p>
+<div class="section" id="pybombs-on-pypi-and-cgran-fixes">
+<h2>Pybombs on PyPi and CGRAN Fixes</h2>
+<p>As mentioned above, I have pushed the pybombs-gui package as a pre-release package
+on PyPi. I am looking forward to release the GUI at the end of my GSoC, along
+with few bug fixes to the Pybombs-cli. There are a few things left before I can
+push the code for a full release. The idea is to make pybombs-gui installable
+from pybombs-cli. The recipe takes care of the PyQt5 dependencies and the
+gui-package is installable using Pip. Also I am working on a new icon for the
+gui - expect for more orange flavor. Maybe ?</p>
+<p>On the CGRAN part, I am working on an idea similar to AptUrl, to install/prompt
+for package installation, from the CGRAN website. If the site is accessed on a
+Linux distro with Gnome or KDE, the default terminal emulator is invoked and
+pybombs will try to install package from website in the default prefix. If pybombs
+is not installed, the user is displayed an &quot;Unable to install message&quot; (obviously).</p>
+<p>GSoC is about to end in another 15-18 days time and I am planning to finish off
+the tasks as quickly as possible. Hopefully, by the end of the GSoC period, we
+will have a new pybombs-gui and new features for CGRAN website. That makes it
+a short update. For now, pip-pip !</p>
+</div>
+	
+</article>
+
 </div>
 <!-- jQuery -->
 <script src="http://ninjacomics.github.io/radioblogr/theme/js/jquery-1.11.3.min.js"></script>
