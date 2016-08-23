@@ -1,5 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-08-05T20:50:00+05:30</updated><entry><title>[GSoC] Weekly Update</title><link href="http://ninjacomics.github.io/radioblogr/2016/08/gsoc_cgran_progress.html" rel="alternate"></link><published>2016-08-05T20:50:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-08-05:radioblogr/2016/08/gsoc_cgran_progress.html</id><summary type="html">&lt;p&gt;This log is a condensed report about my GSoC progress for the past two weeks.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-08-22T20:50:00+05:30</updated><entry><title>[GSoC] Summary, Final Submission, Future Work</title><link href="http://ninjacomics.github.io/radioblogr/2016/08/gsoc_final_eval.html" rel="alternate"></link><published>2016-08-22T20:50:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-08-22:radioblogr/2016/08/gsoc_final_eval.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="" src="http://ninjacomics.github.io/radioblogr/images/gsoc_banner.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;This summer I was very fortunate to work on GNU Radio's installer - Pybombs,
+with my mentors Martin Braun and Nathan West, as a part of GSoC '16. I have
+worked on several features like developing a PyQt5 based GUI for Pybombs
+installer, improve CGRAN website and add some cool features to improve the
+overall user experience while using the installer and the CGRAN site. This log
+marks the last of the entries under the GSoC tags. Read along to know more
+about my contributions during the GSoC program.&lt;/p&gt;
+&lt;div class="section" id="pybombs-qtgui-design-and-development"&gt;
+&lt;h2&gt;PyBOMBS-QTGUI - Design and Development:&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="" src="http://ninjacomics.github.io/radioblogr/images/pybombsgui.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Developing a GUI frontend for GNU Radio's installer - Pybombs was the first
+deliverable of my GSoC proposal. One of the prime goals I had in mind while
+designing the GUI was to keep it as simple as possible. During the design
+phase, I have inspected several existing package manager GUIs. PyBOMBS-QtGUI's
+design is inspired from two such package manager frontends - Synaptic and Pamac.
+While keeping the application's usage as simple as possible, I have added a few
+graphics to make it more visually asthetic. Few key features of Pybombs-QtGUI:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Recipes are loaded from the active prefix.&lt;/li&gt;
+&lt;li&gt;Separate Prefix manager and Recipe manager dialogs.&lt;/li&gt;
+&lt;li&gt;A dialog to add new recipe to the active prefix.&lt;/li&gt;
+&lt;li&gt;The application consumes a few KBs of memory when installed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A link to few screenshots and a screencast featuring PyBOMBS-QtGUI can be found
+in the futher sections of this article.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="cgran-new-look-and-integration-with-pybombs"&gt;
+&lt;h2&gt;CGRAN - new look and integration with PyBOMBS:&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="" src="http://ninjacomics.github.io/radioblogr/images/new_cgran.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;In the final month of the coding period, I have worked on making CGRAN site look
+similar to the new GNU Radio site. Along with the apperance of the front page,
+I have added a few features like tag highligting and fixed few minor issues of
+the site. The module pages now features a &amp;quot;Install from CGRAN&amp;quot; button to install
+individual OOT Modules directly from the CGRAN site. These modules are installed
+to the default prefix, if Pybombs is already installed on the host PC.&lt;/p&gt;
+&lt;p&gt;Apart from adding new look to CGRAN, I have also worked on PybombsUrl - a host
+side python package which handles the Pybombs' URLs and allows to install modules
+directly from the CGRAN site.&lt;/p&gt;
+&lt;p&gt;PybombsUrl works in two modes - Terminal and the GUI mode. If the host side PC
+has PybombsGUI installed, a GUI window is presented to the user to install the
+desired packages from CGRAN. If the package is unable to detect the presence of
+PybombsGUI, it switches back to the terminal mode and the packages are installed
+from the default-terminal of the Desktop Environment. Few key features of this
+deliverable are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;CGRAN site is designed to blend in with the new &lt;a class="reference external" href="gnuradio.org"&gt;gnuradio&lt;/a&gt; site&lt;/li&gt;
+&lt;li&gt;OOT Modules can be installed from the CGRAN website using PybombsUrl&lt;/li&gt;
+&lt;li&gt;Pybombsurl uses a custom protocol to handle the install from CGRAN feature&lt;/li&gt;
+&lt;li&gt;On the client side, the pybombsurl python package handles the pybombs' URLs&lt;/li&gt;
+&lt;li&gt;Packages can either be installed from GUI or from terminal, depending upon
+the availability of the GUI package&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A link to few screenshots of PybombsUrl and CGRAN are provided in the next
+section of this article.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="links-and-urls-to-repositories-prs-and-screenshots"&gt;
+&lt;h2&gt;Links and URLs to Repositories, PRs and Screenshots:&lt;/h2&gt;
+&lt;div class="section" id="pybombsgui-and-pybombsurl-gitlab-repos"&gt;
+&lt;h3&gt;PybombsGUI and PybombsUrl Gitlab Repos:&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitlab.com/NinjaComics/pybombs-qtgui"&gt;PybombsGUI Gitlab Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitlab.com/NinjaComics/pybombsurl"&gt;PybombsUrl Gitlab Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="list-of-commits-and-pull-requests"&gt;
+&lt;h3&gt;List of commits and Pull requests:&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitlab.com/NinjaComics/pybombs-qtgui/commits/master"&gt;List of commits for PybombsGUI&lt;/a&gt;  Complete commit history of the package&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://gitlab.com/NinjaComics/pybombsurl/commits/master"&gt;List of commits for PybombsUrl&lt;/a&gt;  Complete commit history of the package&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/gnuradio/pybombs/pull/356/commits"&gt;Pull request 1 to Pybombs&lt;/a&gt; This PR addresses the &lt;a class="reference external" href="https://github.com/gnuradio/pybombs/issues/348"&gt;issue #348&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/gnuradio/pybombs/pull/367/commits"&gt;Pull request 2 to Pybombs&lt;/a&gt; This PR includes fix to &lt;a class="reference external" href="https://github.com/gnuradio/pybombs/issues/363"&gt;issue #363&lt;/a&gt; and &lt;a class="reference external" href="https://github.com/gnuradio/pybombs/issues/369"&gt;issue #369&lt;/a&gt;. Along with that recipe files are added for PybombsUrl and PybombsGUI&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/gnuradio/gr-recipes/pull/42/commits"&gt;Pull request to gr-recipes&lt;/a&gt; Adds documentation to reflect in PybombsGUI&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/gnuradio/gr-etcetera/pull/14/commits"&gt;Pull request to gr-etcetera&lt;/a&gt; Adds documentation to reflect in PybombsGUI&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/n-west/cgran.org/pull/2/commits"&gt;Pull request to cgran.org&lt;/a&gt; Reflects new design changes, custom protocol handler for pybombs' URLs along with few fixes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pybombsgui-and-pybombsurl-pypi-packges"&gt;
+&lt;h3&gt;PybombsGUI and PybombsUrl PyPI packges:&lt;/h3&gt;
+&lt;p&gt;Both PybombsGUI and PybombsUrl are available on PyPI as pre-developer release
+packages and they can be found at:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/PyBOMBS-QtGUI/"&gt;PybombsGUI PyPI package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/PybombsUrl/"&gt;PybombsUrl PyPI package&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="screenshots-and-screencast-of-a-working-pybombsgui"&gt;
+&lt;h3&gt;Screenshots and screencast of a working PybombsGUI:&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://youtu.be/LJ_610wAsLk"&gt;PybombsGUI screencast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://drive.google.com/drive/folders/0By6XhrfIWygqaU05ajVGVzREMU0?usp=sharing"&gt;PybombsGUI screenshots&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-learning-curve"&gt;
+&lt;h2&gt;The Learning Curve:&lt;/h2&gt;
+&lt;div class="section" id="pyqt5"&gt;
+&lt;h3&gt;PyQt5:&lt;/h3&gt;
+&lt;p&gt;For most part of the coding period, I have learnt a lot on how to develop GUI
+applications using the PyQt5 libraries. Although I had no prior experience
+developin GUI applications, I have enjoyed every bit of designing and developing
+the PybombsGUI. During the process, I have learned a lot on how to sepearate the
+GUI and code for smooth user experience and multithreading using the QThread
+libraries. During the design phase, I have tried to add a flavor of orange to
+the application wherever necessary, to bring the feel and look of GNU Radio project.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pybombsurl"&gt;
+&lt;h3&gt;PybombsUrl:&lt;/h3&gt;
+&lt;p&gt;I spent some valuable amount of time researching on how to interface a website
+with the client side Desktop environment. To enable the PybombsUrl feature, I
+have created a custom protocol/URL handlers and learned a bit more about the
+internals of custom protocol/URL handlers. A plus side of all this, I have improved
+a lot on my coding skills during the program&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="community-bonding-and-help"&gt;
+&lt;h3&gt;Community bonding and help:&lt;/h3&gt;
+&lt;p&gt;While writing the proposal, I have assumed the development of the Qt app to be
+on the easy side, but I had a few challenges in understanding the working mechanism
+of the Qt libraries during and after the mid-term evaluation period.
+During the development phase of the app, I have spent quite some time lurking on
+the pyqt and qt irc channels and have pestered the mods with a lot of questions
+on the working of Qt apps. Thanks to the PyQt IRC members for the help. Along
+with the communication on IRC, I have interacted with few GNU Radio community
+members on the mailing list to update the progress during the coding period.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="future-work"&gt;
+&lt;h2&gt;Future Work:&lt;/h2&gt;
+&lt;p&gt;Both PybombsGUI and PybombsUrl are now available as pre-developer and alpha
+release packages respectively. I am definitely looking forward to add more
+features to these projects and see if there can be any improvement to be done
+on the CGRAN side. Even after GSoC, I plan on supporting the CGRAN and Pybombs'
+tools. Few areas I am looking forward to work on before the release of the
+packages are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;[CGRAN] Add more documentation to the module pages, to make it a one stop shop
+information source on 3rd party OOT Modules.&lt;/li&gt;
+&lt;li&gt;[Pybombs and CGRAN] Provide a mirror repository of all the 3rd party OOT Modules which can serve
+CGRAN and PyBombs at the same time.&lt;/li&gt;
+&lt;li&gt;[Pybombs] Proper handling of QThread functionality in the Pybombsgui.&lt;/li&gt;
+&lt;li&gt;[Pybombs] A more realistic progress bar implementation in the Pybombsgui.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I am looking forward to address all these issues in the coming 1-2 weeks and
+release both PybombsGUI and PybombsUrl as stable packages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="acknowledgements-and-working-with-mentor"&gt;
+&lt;h2&gt;Acknowledgements and Working with Mentor:&lt;/h2&gt;
+&lt;p&gt;Finally, I am thankful to my mentors Martin Braun and Nathan West, for providing
+me an opportunity to contribute to the GNU Radio community as a part of GSoC program.
+Martin Braun's weekly calls have really helped me in decision making throughout
+the  program. I look forward to contribute more to the GNU Radio community in coming days.&lt;/p&gt;
+&lt;p&gt;For now, pip-pip ! Here's a &lt;a class="reference external" href="https://c.xkcd.com/random/comic/"&gt;random xkcd cartoon strip&lt;/a&gt; :)&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="gsoc"></category><category term="final evaluation"></category><category term="coding period"></category></entry><entry><title>[GSoC] Weekly Update</title><link href="http://ninjacomics.github.io/radioblogr/2016/08/gsoc_cgran_progress.html" rel="alternate"></link><published>2016-08-05T20:50:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-08-05:radioblogr/2016/08/gsoc_cgran_progress.html</id><summary type="html">&lt;p&gt;This log is a condensed report about my GSoC progress for the past two weeks.
 Quick update is, pybombs-gui is now on PyPi as a pre-release package. On the
 other hand, I am working on the &amp;quot;Install from CGRAN&amp;quot;, which is a part of my
 proposal. Read along for more updates.&lt;/p&gt;

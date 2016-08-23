@@ -24,4 +24,4 @@ FEED_ALL_ATOM = 'radioblogrfeeds'
 
 #STATIC Path settings
 
-STATIC_PATHS = ['images', 'pdfs']
+STATIC_PATHS = ['images', 'pdfs', 'contents/2016/08/images']
