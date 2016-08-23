@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-08-22T20:50:00+05:30</updated><entry><title>[GSoC] Summary, Final Submission, Future Work</title><link href="http://ninjacomics.github.io/radioblogr/2016/08/gsoc_final_eval.html" rel="alternate"></link><published>2016-08-22T20:50:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-08-22:radioblogr/2016/08/gsoc_final_eval.html</id><summary type="html">&lt;img alt="" src="images/gsoc_banner.png" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ravi Sharan's /radio/bin/io</title><link href="http://ninjacomics.github.io/radioblogr/" rel="alternate"></link><link href="http://feeds.feedburner.com/feeds/all-en.atom.xml" rel="self"></link><id>http://ninjacomics.github.io/radioblogr/</id><updated>2016-08-22T20:50:00+05:30</updated><entry><title>[GSoC] Summary, Final Submission, Future Work</title><link href="http://ninjacomics.github.io/radioblogr/2016/08/gsoc_final_eval.html" rel="alternate"></link><published>2016-08-22T20:50:00+05:30</published><author><name>Ravi Sharan</name></author><id>tag:ninjacomics.github.io,2016-08-22:radioblogr/2016/08/gsoc_final_eval.html</id><summary type="html">&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;img alt="" src="images/gsoc_banner.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;This summer I was very fortunate to work on GNU Radio's installer - Pybombs,
 with my mentors Martin Braun and Nathan West, as a part of GSoC '16. I have
 worked on several features like developing a PyQt5 based GUI for Pybombs
@@ -9,7 +15,13 @@ marks the last of the entries under the GSoC tags. Read along to know more
 about my contributions during the GSoC program.&lt;/p&gt;
 &lt;div class="section" id="pybombs-qtgui-design-and-development"&gt;
 &lt;h2&gt;PyBOMBS-QTGUI - Design and Development:&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;img alt="" src="images/pybombsgui.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;Developing a GUI frontend for GNU Radio's installer - Pybombs was the first
 deliverable of my GSoC proposal. One of the prime goals I had in mind while
 designing the GUI was to keep it as simple as possible. During the design
@@ -28,7 +40,13 @@ in the futher sections of this article.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="cgran-new-look-and-integration-with-pybombs"&gt;
 &lt;h2&gt;CGRAN - new look and integration with PyBOMBS:&lt;/h2&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;img alt="" src="images/new_cgran.png" /&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;In the final month of the coding period, I have worked on making CGRAN site look
 similar to the new GNU Radio site. Along with the apperance of the front page,
 I have added a few features like tag highligting and fixed few minor issues of
