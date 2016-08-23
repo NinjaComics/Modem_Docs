@@ -99,8 +99,8 @@ section of this article.&lt;/p&gt;
 &lt;p&gt;Both PybombsGUI and PybombsUrl are available on PyPI as pre-developer release
 packages and they can be found at:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi?%3Aaction=pkg_edit&amp;amp;name=PyBOMBS-QtGUI"&gt;PybombsGUI PyPI package&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi?%3Aaction=pkg_edit&amp;amp;name=PybombsUrl"&gt;PybombsUrl PyPI package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/PyBOMBS-QtGUI/"&gt;PybombsGUI PyPI package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/PybombsUrl/"&gt;PybombsUrl PyPI package&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="scrrenshots-and-screencast-of-a-working-pybombsgui"&gt;
