@@ -103,8 +103,8 @@ packages and they can be found at:&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://pypi.python.org/pypi/PybombsUrl/"&gt;PybombsUrl PyPI package&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="scrrenshots-and-screencast-of-a-working-pybombsgui"&gt;
-&lt;h3&gt;Scrrenshots and screencast of a working PybombsGUI:&lt;/h3&gt;
+&lt;div class="section" id="screenshots-and-screencast-of-a-working-pybombsgui"&gt;
+&lt;h3&gt;Screenshots and screencast of a working PybombsGUI:&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://youtu.be/LJ_610wAsLk"&gt;PybombsGUI screencast&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://drive.google.com/drive/folders/0By6XhrfIWygqaU05ajVGVzREMU0?usp=sharing"&gt;PybombsGUI screenshots&lt;/a&gt;&lt;/li&gt;
@@ -152,13 +152,15 @@ on the CGRAN side. Even after GSoC, I plan on supporting the CGRAN and Pybombs'
 tools. Few areas I am looking forward to work on before the release of the
 packages are:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Add more documentation to the module pages, to make it a one stop shop
+&lt;li&gt;[CGRAN] Add more documentation to the module pages, to make it a one stop shop
 information source on 3rd party OOT Modules.&lt;/li&gt;
-&lt;li&gt;Provide a mirror repository of all the 3rd party OOT Modules which can serve
+&lt;li&gt;[Pybombs and CGRAN] Provide a mirror repository of all the 3rd party OOT Modules which can serve
 CGRAN and PyBombs at the same time.&lt;/li&gt;
-&lt;li&gt;Propoer handling of QThread functionality in the Pybombsgui.&lt;/li&gt;
-&lt;li&gt;A more realistic progress bar implementation in the Pybombsgui.&lt;/li&gt;
+&lt;li&gt;[Pybombs] Proper handling of QThread functionality in the Pybombsgui.&lt;/li&gt;
+&lt;li&gt;[Pybombs] A more realistic progress bar implementation in the Pybombsgui.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;I am looking forward to address all these issues in the coming 1-2 weeks and
+release both PybombsGUI and PybombsUrl as stable packages.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="acknowledgements-and-working-with-mentor"&gt;
 &lt;h2&gt;Acknowledgements and Working with Mentor:&lt;/h2&gt;
